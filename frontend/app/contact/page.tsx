@@ -19,7 +19,7 @@ export default function ContactPage() {
               <p className="contact-label">GET IN TOUCH</p>
               <h1 className="contact-heading">Let&apos;s build something together</h1>
               <p className="contact-description">
-                Whether you&apos;re a founder with an early-stage idea or looking for pre-seed and seed support, we&apos;d love to hear from you.
+                Choose the form that fits you best - Founder, MSME, Investor, or Talent - and we&apos;ll get back to you quickly.
               </p>
               <div className="contact-info">
                 <div className="contact-info-item">

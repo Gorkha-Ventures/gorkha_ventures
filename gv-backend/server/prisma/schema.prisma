@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AdminRole {
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum SubmissionType {
+  FOUNDER
+  MSME
+  INVESTOR
+  TALENT
+}
+
+enum SubmissionStatus {
+  NEW
+  IN_REVIEW
+  RESOLVED
+  REJECTED
+}
+
+model AdminUser {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  name         String
+  role         AdminRole      @default(ADMIN)
+  googleId     String         @unique
+  refreshTokens RefreshToken[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  tokenHash String
+  userId    String
+  user      AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+}
+
+model Submission {
+  id              String           @id @default(cuid())
+  type            SubmissionType
+  status          SubmissionStatus @default(NEW)
+  name            String
+  email           String
+  number          String
+  source          String?
+
+  ideaDetails     String?
+  stage           String?
+
+  industry        String?
+  challenge       String?
+
+  focusIndustry   String?
+
+  desiredRole     String?
+  resumeUrl       String?
+  resumePublicId  String?
+  resumeFileName  String?
+  resumeMimeType  String?
+  resumeSize      Int?
+
+  payload         Json?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
