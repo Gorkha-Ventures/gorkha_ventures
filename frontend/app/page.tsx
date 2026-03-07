@@ -1,6 +1,5 @@
 import Header from '@/components/Header'
 import HeroSection from '@/components/HeroSection'
-import VideoCard from '@/components/VideoCard'
 import Partners from '@/components/Partners'
 import ServiceCards from '@/components/ServiceCards'
 import BackedBySection from '@/components/BackedBySection'
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <Header />
       <HeroSection />
-      <VideoCard />
       <Partners />
       <ServiceCards />
       <BackedBySection />

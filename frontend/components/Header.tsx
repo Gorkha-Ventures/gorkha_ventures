@@ -5,9 +5,30 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const navServices = [
-  { title: 'MSME Offerings', href: '/services/msme-offerings' },
-  { title: 'Offerings for Investors', href: '/services/offerings-for-investors' },
-  { title: 'Offerings for Job Seekers', href: '/services/offerings-for-job-seekers' },
+  {
+    title: 'MSME Offerings',
+    subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
+    href: '/services/msme-offerings',
+    iconVariant: 'analytics',
+  },
+  {
+    title: 'Offerings for Investors',
+    subtitle: 'Deal flow | Portfolio support | Co-investment',
+    href: '/services/offerings-for-investors',
+    iconVariant: 'growth',
+  },
+  {
+    title: 'Offerings for Job Seekers',
+    subtitle: 'Portfolio careers | Startup roles',
+    href: '/services/offerings-for-job-seekers',
+    iconVariant: 'talent',
+  },
+  {
+    title: 'Offerings for Founders',
+    subtitle: 'Validation | Product strategy | GTM support',
+    href: '/services/offerings-for-founders',
+    iconVariant: 'founders',
+  },
 ]
 
 export default function Header() {
@@ -59,19 +80,23 @@ export default function Header() {
                     role="menuitem"
                     onClick={() => setServicesOpen(false)}
                   >
-                    {service.title}
+                    <span className={`nav-dropdown-item-icon nav-dropdown-item-icon-${service.iconVariant}`} aria-hidden>
+                      <span className="nav-dropdown-item-icon-mark" />
+                    </span>
+                    <span className="nav-dropdown-item-content">
+                      <span className="nav-dropdown-item-title">{service.title}</span>
+                      <span className="nav-dropdown-item-subtitle">{service.subtitle}</span>
+                    </span>
                   </Link>
                 ))}
               </div>
             </div>
-            <Link href="/what-we-do" className="nav-link">What we do</Link>
-            <Link href="/process" className="nav-link">Process</Link>
-          </div>
-          <div className="nav-actions">
-            <span className="nav-lang">IN</span>
-            <Link href="/contact" className="nav-cta">Contact us</Link>
+            <Link href="/what-we-do" className="nav-link nav-resource-button">Resources</Link>
           </div>
         </nav>
+        <div className="nav-actions">
+          <Link href="/contact" className="nav-cta">Contact us</Link>
+        </div>
       </div>
     </header>
   )

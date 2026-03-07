@@ -25,6 +25,23 @@ export default function HeroSection() {
 
   return (
     <main className="hero-section">
+      <div className="hero-background-media" aria-hidden>
+        <video
+          className="hero-background-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        >
+          <source
+            src="https://cdn.prod.website-files.com/635931b47ccace7620762f33/6359a3fff1df58d0e3633832_Home Video-transcode.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="hero-background-overlay" />
+      </div>
+
       <div className="container">
         <div className="hero-content">
           <div className="hero-left">
