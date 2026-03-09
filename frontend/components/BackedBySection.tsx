@@ -19,6 +19,17 @@ export default function BackedBySection() {
     { name: 'Tech', emoji: '⚙️' },
   ]
 
+  const iconPositions = [
+    { x: '8%', y: '6%', xMobile: '2%', yMobile: '6%' },
+    { x: '86%', y: '8%', xMobile: '76%', yMobile: '5%' },
+    { x: '2%', y: '38%', xMobile: '-4%', yMobile: '30%' },
+    { x: '23%', y: '47%', xMobile: '14%', yMobile: '40%' },
+    { x: '74%', y: '44%', xMobile: '74%', yMobile: '39%' },
+    { x: '93%', y: '47%', xMobile: '90%', yMobile: '44%' },
+    { x: '10%', y: '86%', xMobile: '4%', yMobile: '82%' },
+    { x: '64%', y: '88%', xMobile: '64%', yMobile: '84%' },
+  ] as const
+
   return (
     <section className="backed-by-section">
       <div className="container backed-by-container">
@@ -31,8 +42,11 @@ export default function BackedBySection() {
               style={{
                 '--float-delay': `${index * 0.4}s`,
                 '--float-duration': `${4 + (index % 3)}s`,
+                '--icon-x': iconPositions[index].x,
+                '--icon-y': iconPositions[index].y,
+                '--icon-x-mobile': iconPositions[index].xMobile,
+                '--icon-y-mobile': iconPositions[index].yMobile,
               } as React.CSSProperties}
-              data-position={index}
             >
               <span className="floating-icon-emoji">{icon.emoji}</span>
             </div>

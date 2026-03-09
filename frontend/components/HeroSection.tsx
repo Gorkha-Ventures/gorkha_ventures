@@ -35,7 +35,7 @@ export default function HeroSection() {
           preload="metadata"
         >
           <source
-            src="https://cdn.prod.website-files.com/635931b47ccace7620762f33/6359a3fff1df58d0e3633832_Home Video-transcode.mp4"
+            src="/hero.mp4"
             type="video/mp4"
           />
         </video>

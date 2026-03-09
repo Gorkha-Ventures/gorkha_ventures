@@ -7,6 +7,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 type FormType = 'founder' | 'msme' | 'investor' | 'talent'
 
 type FormConfig = {
+  optionLabel: string
   title: string
   description: string
   submitLabel: string
@@ -14,21 +15,25 @@ type FormConfig = {
 
 const formConfigs: Record<FormType, FormConfig> = {
   founder: {
+    optionLabel: 'a founder',
     title: 'For Founders',
     description: 'Share your idea details and current stage.',
     submitLabel: 'Submit founder form',
   },
   msme: {
+    optionLabel: 'an MSME owner',
     title: 'For MSME',
     description: 'Tell us about your industry and key challenge.',
     submitLabel: 'Submit MSME form',
   },
   investor: {
+    optionLabel: 'an investor',
     title: 'For Investors',
     description: 'Let us know your investment focus.',
     submitLabel: 'Submit investor form',
   },
   talent: {
+    optionLabel: 'looking for opportunities',
     title: 'For Talent',
     description: 'Apply for roles and upload your resume.',
     submitLabel: 'Submit talent form',
@@ -36,12 +41,18 @@ const formConfigs: Record<FormType, FormConfig> = {
 }
 
 export default function ContactForm() {
-  const [selectedForm, setSelectedForm] = useState<FormType>('founder')
+  const [selectedForm, setSelectedForm] = useState<FormType | ''>('')
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (!selectedForm) {
+      setStatus('error')
+      setErrorMessage('Please select who you are before submitting.')
+      return
+    }
+
     const form = e.currentTarget
     const data = new FormData(form)
     const formType = data.get('formType') as FormType
@@ -78,24 +89,40 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form-shell">
-      <div className="contact-form-cards">
-        {(Object.keys(formConfigs) as FormType[]).map((type) => (
-          <button
-            key={type}
-            type="button"
-            className={`contact-form-card ${selectedForm === type ? 'is-active' : ''}`}
-            onClick={() => {
-              setSelectedForm(type)
+      <div className={`contact-form-selector-wrap ${selectedForm ? 'is-selected' : ''}`}>
+      <div className="contact-form-selector-line">
+        <span className="contact-form-selector-text">You are</span>
+        <span className="contact-form-selector-field">
+          <select
+            className="contact-form-selector-dropdown"
+            value={selectedForm}
+            onChange={(e) => {
+              setSelectedForm(e.target.value as FormType | '')
               setStatus('idle')
               setErrorMessage('')
             }}
             disabled={status === 'sending'}
+            aria-label="Select form type"
           >
-            <span className="contact-form-card-title">{formConfigs[type].title}</span>
-            <span className="contact-form-card-text">{formConfigs[type].description}</span>
-          </button>
-        ))}
+            <option value="">Select</option>
+            {(Object.keys(formConfigs) as FormType[]).map((type) => (
+              <option key={type} value={type}>
+                {formConfigs[type].optionLabel}
+              </option>
+            ))}
+          </select>
+          <span className="contact-form-selector-arrow" aria-hidden>▾</span>
+        </span>
+        <span className="contact-form-selector-text">?</span>
       </div>
+      </div>
+
+      <div className={`contact-form-reveal ${selectedForm ? 'is-visible' : ''}`}>
+      {!!selectedForm && (
+      <>
+      <p className="contact-form-selector-description">
+        {formConfigs[selectedForm].description}
+      </p>
 
       <form className="contact-form" onSubmit={handleSubmit}>
         <input type="hidden" name="formType" value={selectedForm} />
@@ -185,6 +212,11 @@ export default function ContactForm() {
           {status === 'sending' ? 'Submitting…' : formConfigs[selectedForm].submitLabel}
         </button>
       </form>
+      </>
+      )}
+      </div>
+
+      {!selectedForm && status === 'error' && <p className="form-error">{errorMessage}</p>}
     </div>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import GrowthAnimation from './GrowthAnimation'
 
 const services = [
   
@@ -78,7 +79,7 @@ export default function ServiceCards() {
                     </div>
 
                     <div className="service-card-visual service-card-founders-visual">
-                      <div className="service-card-icon">{service.icon}</div>
+                      <GrowthAnimation />
                     </div>
                   </div>
                 ) : (

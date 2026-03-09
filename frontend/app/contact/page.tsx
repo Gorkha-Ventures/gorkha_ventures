@@ -24,11 +24,11 @@ export default function ContactPage() {
               <div className="contact-info">
                 <div className="contact-info-item">
                   <span className="contact-info-label">Email</span>
-                  <a href="mailto:hello@gorkhaventures.com" className="contact-info-value">hello@gorkhaventures.com</a>
+                  <a href="mailto:hello@gorkhaventures.com" className="contact-info-value">saurabh@gorkhaventures.com</a>
                 </div>
                 <div className="contact-info-item">
                   <span className="contact-info-label">Phone</span>
-                  <a href="tel:+911234567890" className="contact-info-value">+91 123 456 7890</a>
+                  <a href="tel:+911234567890" className="contact-info-value">+91 782 000 1282</a>
                 </div>
                 <div className="contact-info-item">
                   <span className="contact-info-label">Location</span>
