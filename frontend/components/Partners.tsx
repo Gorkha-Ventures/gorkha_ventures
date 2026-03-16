@@ -1,7 +1,23 @@
 import Image from 'next/image'
+import fs from 'node:fs'
+import path from 'node:path'
 
 export default function Partners() {
-  const partners: { name: string; logo: string }[] = []
+  const partnersDir = path.join(process.cwd(), 'public', 'partners')
+  const partners = fs.existsSync(partnersDir)
+    ? fs
+        .readdirSync(partnersDir)
+        .filter((fileName) => /\.(png|jpe?g|webp|svg)$/i.test(fileName))
+        .sort((a, b) => a.localeCompare(b))
+        .map((fileName) => {
+          const nameFromFile = fileName.replace(/\.[^/.]+$/, '').replace(/[-_]+/g, ' ')
+          const label = nameFromFile.charAt(0).toUpperCase() + nameFromFile.slice(1)
+          return {
+            name: label,
+            logo: `/partners/${fileName}`,
+          }
+        })
+    : []
 
   return (
     <section className="partners-section">
