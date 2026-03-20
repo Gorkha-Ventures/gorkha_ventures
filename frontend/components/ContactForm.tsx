@@ -1,10 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
-type FormType = 'founder' | 'msme' | 'investor' | 'talent'
+export type FormType = 'founder' | 'msme' | 'investor' | 'talent'
 
 type FormConfig = {
   optionLabel: string
@@ -15,35 +15,60 @@ type FormConfig = {
 
 const formConfigs: Record<FormType, FormConfig> = {
   founder: {
-    optionLabel: 'a founder',
+    optionLabel: 'A Founder',
     title: 'For Founders',
     description: 'Share your idea details and current stage.',
     submitLabel: 'Submit founder form',
   },
   msme: {
-    optionLabel: 'an MSME owner',
+    optionLabel: 'A MSME Owner',
     title: 'For MSME',
     description: 'Tell us about your industry and key challenge.',
     submitLabel: 'Submit MSME form',
   },
   investor: {
-    optionLabel: 'an investor',
+    optionLabel: 'An Investor',
     title: 'For Investors',
     description: 'Let us know your investment focus.',
     submitLabel: 'Submit investor form',
   },
   talent: {
-    optionLabel: 'looking for opportunities',
+    optionLabel: 'A Job Seeker',
     title: 'For Talent',
     description: 'Apply for roles and upload your resume.',
     submitLabel: 'Submit talent form',
   },
 }
 
-export default function ContactForm() {
-  const [selectedForm, setSelectedForm] = useState<FormType | ''>('')
+type ContactFormProps = {
+  initialFormType?: FormType | ''
+  onBack?: () => void
+}
+
+export default function ContactForm({ initialFormType = '', onBack }: ContactFormProps) {
+  const [selectedForm, setSelectedForm] = useState<FormType | ''>(initialFormType)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+
+  useEffect(() => {
+    if (!initialFormType) return
+    setSelectedForm(initialFormType)
+    setStatus('idle')
+    setErrorMessage('')
+  }, [initialFormType])
+
+  useEffect(() => {
+    if (initialFormType) return
+    const role = new URLSearchParams(window.location.search).get('role')
+    if (!role) return
+
+    const allowedRoles: FormType[] = ['founder', 'msme', 'investor', 'talent']
+    if (allowedRoles.includes(role as FormType)) {
+      setSelectedForm(role as FormType)
+      setStatus('idle')
+      setErrorMessage('')
+    }
+  }, [initialFormType])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -87,6 +112,15 @@ export default function ContactForm() {
     }
   }
 
+  function handleBack() {
+    setSelectedForm('')
+    setStatus('idle')
+    setErrorMessage('')
+    if (onBack) {
+      onBack()
+    }
+  }
+
   return (
     <div className="contact-form-shell">
       <div className={`contact-form-selector-wrap ${selectedForm ? 'is-selected' : ''}`}>
@@ -111,9 +145,12 @@ export default function ContactForm() {
               </option>
             ))}
           </select>
-          <span className="contact-form-selector-arrow" aria-hidden>▾</span>
+          <span className="contact-form-selector-arrow" aria-hidden>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
         </span>
-        <span className="contact-form-selector-text">?</span>
       </div>
       </div>
 
@@ -208,9 +245,19 @@ export default function ContactForm() {
         {status === 'success' && <p className="form-success">Thanks! Your form has been submitted.</p>}
         {status === 'error' && <p className="form-error">{errorMessage}</p>}
 
-        <button type="submit" className="contact-submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Submitting…' : formConfigs[selectedForm].submitLabel}
-        </button>
+        <div className="contact-form-actions">
+          <button
+            type="button"
+            className="contact-back"
+            onClick={handleBack}
+            disabled={status === 'sending'}
+          >
+            Back
+          </button>
+          <button type="submit" className="contact-submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Submitting...' : formConfigs[selectedForm].submitLabel}
+          </button>
+        </div>
       </form>
       </>
       )}

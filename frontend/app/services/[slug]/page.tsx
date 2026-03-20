@@ -14,8 +14,23 @@ const services: Record<string, {
   highlights?: string[]
   ctaText: string
 }> = {
+  'offerings-for-founders': {
+    title: 'Offerings For Founders',
+    subtitle: 'Validation | Product strategy | GTM support',
+    description: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
+    longDescription: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
+    icon: '🚀',
+    color: '#73d8e0',
+    highlights: [
+      'Business model validation and market testing',
+      'Product strategy to prioritize roadmap bets',
+      'GTM planning for repeatable customer acquisition',
+      'Hands-on support from idea to early scale'
+    ],
+    ctaText: 'Apply as a founder',
+  },
   'msme-offerings': {
-    title: 'MSME Offerings',
+    title: 'Offerings For MSME',
     subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     description: 'We help micro, small and medium enterprises grow from first customer to Series A.',
     longDescription: 'Gorkha Ventures supports MSMEs with end-to-end offerings: pre-seed incubation to validate and scale your idea, seed funding when you\'re ready to grow, and hands-on mentorship from operators who\'ve built companies. We focus on evidence-based execution and long-term partnership so you can go from first customer to Series A with clarity and support.',
