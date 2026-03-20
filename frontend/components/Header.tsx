@@ -6,7 +6,13 @@ import { useEffect, useState } from 'react'
 
 const navServices = [
   {
-    title: 'MSME Offerings',
+    title: 'Offerings for Founders',
+    subtitle: 'Validation | Product strategy | GTM support',
+    href: '/services/offerings-for-founders',
+    iconVariant: 'founders',
+  },
+  {
+    title: 'Offerings For MSME',
     subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     href: '/services/msme-offerings',
     iconVariant: 'analytics',
@@ -23,12 +29,7 @@ const navServices = [
     href: '/services/offerings-for-job-seekers',
     iconVariant: 'talent',
   },
-  {
-    title: 'Offerings for Founders',
-    subtitle: 'Validation | Product strategy | GTM support',
-    href: '/services/offerings-for-founders',
-    iconVariant: 'founders',
-  },
+  
 ]
 
 export default function Header() {
@@ -91,7 +92,14 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            <Link href="/what-we-do" className="nav-link nav-resource-button">Resources</Link>
+            <a
+              href="https://news.gorkhaventures.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link nav-resource-button"
+            >
+              Resources
+            </a>
           </div>
         </nav>
         <div className="nav-actions">

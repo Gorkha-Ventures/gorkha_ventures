@@ -8,6 +8,7 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import SelectionProcess from '@/components/SelectionProcess'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import OurNetwork from '@/components/OurNetwork'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <Partners />
       <ServiceCards />
+      <OurNetwork />
       <BackedBySection />
       <DifferentiatorSection />
       <TestimonialsSection />

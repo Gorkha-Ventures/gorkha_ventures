@@ -15,7 +15,7 @@ const services: Record<string, {
   ctaText: string
 }> = {
   'msme-offerings': {
-    title: 'MSME Offerings',
+    title: 'Offerings For MSME',
     subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     description: 'We help micro, small and medium enterprises grow from first customer to Series A.',
     longDescription: 'Gorkha Ventures supports MSMEs with end-to-end offerings: pre-seed incubation to validate and scale your idea, seed funding when you\'re ready to grow, and hands-on mentorship from operators who\'ve built companies. We focus on evidence-based execution and long-term partnership so you can go from first customer to Series A with clarity and support.',
