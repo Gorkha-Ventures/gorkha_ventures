@@ -1,0 +1,325 @@
+.page {
+  --obsidian: #101820;
+  --deep-teal: #00313c;
+  --sky: #73d8e0;
+  --white: #fff;
+  --muted: rgba(255, 255, 255, 0.6);
+  font-family: 'Barlow Semi Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--obsidian);
+  color: var(--white);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 16px 24px;
+  background: rgba(16, 24, 32, 0.94);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo,
+.back {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.back {
+  color: var(--muted);
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 72px;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid rgba(115, 216, 224, 0.3);
+  background: rgba(115, 216, 224, 0.1);
+  color: var(--sky);
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 9vw, 86px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero h1 span {
+  color: var(--sky);
+}
+
+.hero p {
+  max-width: 650px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.stats strong {
+  display: block;
+  color: var(--sky);
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stats small {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+}
+
+.section {
+  padding: 72px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.deep {
+  background: var(--deep-teal);
+}
+
+.section h2 {
+  font-size: clamp(30px, 5vw, 56px);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.investorProblemSection {
+  padding-top: 82px;
+}
+
+.problemEyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.8);
+  margin-bottom: 14px;
+}
+
+.problemEyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--sky);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.problemHeading {
+  max-width: 920px;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 0.97;
+  margin-bottom: 16px;
+}
+
+.problemIntro {
+  max-width: 860px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.investorProblemsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.investorProblemCard {
+  padding: 1.75rem 1.55rem 1.45rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.investorProblemCard:nth-child(2n) {
+  border-right: none;
+}
+
+.investorProblemCard:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.problemIcon {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(115, 216, 224, 0.2);
+  background: rgba(115, 216, 224, 0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(115, 216, 224, 0.8);
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+.problemCardTitle {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1.8rem;
+  line-height: 1.02;
+  margin-bottom: 0.8rem;
+}
+
+.problemCardBody {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  margin-bottom: 0.95rem;
+}
+
+.problemCardStat {
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.6);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.grid2 article,
+.grid4 article {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.grid2 h3,
+.grid4 h3 {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.grid2 p,
+.grid4 p,
+.timeline p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline b {
+  display: block;
+  color: var(--sky);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.table > div {
+  padding: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+}
+
+.table > div:nth-child(3n) {
+  border-right: none;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--sky);
+  color: var(--obsidian);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .stats,
+  .grid2,
+  .grid4,
+  .table,
+  .investorProblemsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .investorProblemCard {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .investorProblemCard:last-child {
+    border-bottom: none;
+  }
+}
