@@ -71,7 +71,7 @@ export default function MsmeOfferingLanding() {
       <section className={styles.hero}>
         <div className={styles.container}>
           <p className={styles.heroTag}>Uttarakhand MSME Growth Partners</p>
-          <h1>Apka Business, <em>Hamari Zimmedari.</em></h1>
+          <h1>Building Resilient <em>Businesses</em></h1>
           <p>
             We help Uttarakhand MSMEs fix cash flow, build teams, and grow beyond founder dependency.
           </p>
