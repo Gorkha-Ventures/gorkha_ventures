@@ -251,6 +251,388 @@
   margin-bottom: 6px;
 }
 
+.thesisSection {
+  padding-top: 82px;
+}
+
+.thesisGrid {
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  gap: 3rem;
+  margin-top: 16px;
+}
+
+.thesisCopy p {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 1rem;
+  line-height: 1.72;
+  margin-bottom: 0.85rem;
+  max-width: 560px;
+}
+
+.thesisPull {
+  margin-top: 1.8rem;
+  border-left: 3px solid var(--sky);
+  padding: 0.7rem 0 0.7rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 520px;
+}
+
+.thesisTimeline {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.thesisTimeline::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.thesisItem {
+  position: relative;
+  margin-bottom: 1.7rem;
+}
+
+.thesisItem:last-child {
+  margin-bottom: 0;
+}
+
+.thesisItem::before {
+  content: '';
+  position: absolute;
+  left: -1.85rem;
+  top: 0.36rem;
+  width: 8px;
+  height: 8px;
+  background: var(--sky);
+}
+
+.thesisStage {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.8);
+  margin-bottom: 0.36rem;
+  font-weight: 600;
+}
+
+.thesisTitle {
+  font-size: 2.1rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.thesisBody {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 1.02rem;
+  line-height: 1.72;
+  margin-bottom: 0.7rem;
+}
+
+.thesisBadge {
+  display: inline-block;
+  padding: 0.38rem 0.72rem;
+  border: 1px solid rgba(115, 216, 224, 0.28);
+  background: rgba(115, 216, 224, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: var(--sky);
+  font-weight: 600;
+}
+
+.thesisBadgeStrong {
+  background: var(--sky);
+  color: var(--obsidian);
+  border-color: var(--sky);
+}
+
+.pillarsSection {
+  padding-top: 86px;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pillarCard {
+  position: relative;
+  padding: 1.65rem 1.45rem 1.35rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.pillarCard:last-child {
+  border-right: none;
+}
+
+.pillarNum {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.95rem;
+  color: rgba(115, 216, 224, 0.08);
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.profileSection {
+  padding-top: 86px;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profileCell {
+  padding: 1.55rem 1.45rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.profileCell:nth-child(2n) {
+  border-right: none;
+}
+
+.profileCell:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.profileTag {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.8);
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+
+.profileTitle {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.profileList {
+  list-style: none;
+}
+
+.profileList li {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+  padding: 0.36rem 0;
+  display: flex;
+  gap: 0.58rem;
+}
+
+.profileList li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--sky);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.compareSection {
+  padding-top: 86px;
+}
+
+.compareWrap {
+  margin-top: 14px;
+  overflow-x: auto;
+}
+
+.compareTable {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compareTable th {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compareTable td {
+  padding: 0.86rem 1rem;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+.compareTable tr:last-child td {
+  border-bottom: none;
+}
+
+.compareRowLabel {
+  color: var(--white) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.compareHighlightHead {
+  color: rgba(115, 216, 224, 0.85) !important;
+}
+
+.compareHighlight {
+  color: rgba(186, 238, 245, 0.9) !important;
+  background: rgba(115, 216, 224, 0.08);
+  border-left: 1px solid rgba(115, 216, 224, 0.22);
+  border-right: 1px solid rgba(115, 216, 224, 0.22);
+  font-weight: 600;
+}
+
+.journeySection {
+  padding-top: 86px;
+}
+
+.journeyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journeyCard {
+  padding: 1.7rem 1.25rem 1.25rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.journeyCard:last-child {
+  border-right: none;
+}
+
+.journeyStep {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.8);
+  margin-bottom: 0.95rem;
+  font-weight: 600;
+}
+
+.journeyTitle {
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.journeyBody {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.72;
+}
+
+.engageSection {
+  padding-top: 86px;
+}
+
+.engageGrid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.engageButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.92rem 1.8rem;
+  background: var(--sky);
+  color: var(--obsidian);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.engageTypes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.engageType {
+  position: relative;
+  padding: 1.35rem 1.25rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.engageType:last-child {
+  border-bottom: none;
+}
+
+.engageType::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(115, 216, 224, 0.85);
+}
+
+.engageTypeLabel {
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.72);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.engageTypeTitle {
+  font-size: 1.72rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.engageTypeBody {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+}
+
 .table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -276,6 +658,10 @@
 
 .center {
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 98px;
+  padding-bottom: 98px;
 }
 
 .center p {
@@ -294,6 +680,81 @@
   font-weight: 700;
 }
 
+.finalGlow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(760px, 92vw);
+  height: 390px;
+  background: radial-gradient(ellipse, rgba(0, 49, 60, 0.75) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.finalCtaInner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.finalEyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(115, 216, 224, 0.78);
+  margin-bottom: 1.6rem;
+}
+
+.finalHeading {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.2rem;
+}
+
+.finalHeading span {
+  color: var(--sky);
+}
+
+.finalSub {
+  max-width: 620px;
+  margin: 0 auto 1.7rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.finalButtons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.finalPrimary,
+.finalSecondary {
+  display: inline-block;
+  padding: 0.95rem 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.finalPrimary {
+  background: var(--sky);
+  color: var(--obsidian);
+}
+
+.finalSecondary {
+  color: rgba(186, 238, 245, 0.9);
+  border: 1px solid rgba(115, 216, 224, 0.35);
+  background: rgba(115, 216, 224, 0.04);
+}
+
 .fade {
   opacity: 0;
   transform: translateY(22px);
@@ -310,8 +771,34 @@
   .grid2,
   .grid4,
   .table,
-  .investorProblemsGrid {
+  .investorProblemsGrid,
+  .pillarsGrid,
+  .profileGrid,
+  .journeyGrid {
     grid-template-columns: 1fr;
+  }
+
+  .finalButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .engageGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .thesisGrid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .thesisPull {
+    font-size: 1.45rem;
+  }
+
+  .thesisTitle {
+    font-size: 1.5rem;
   }
 
   .investorProblemCard {
@@ -320,6 +807,33 @@
   }
 
   .investorProblemCard:last-child {
+    border-bottom: none;
+  }
+
+  .pillarCard {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pillarCard:last-child {
+    border-bottom: none;
+  }
+
+  .profileCell {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .profileCell:last-child {
+    border-bottom: none;
+  }
+
+  .journeyCard {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .journeyCard:last-child {
     border-bottom: none;
   }
 }
