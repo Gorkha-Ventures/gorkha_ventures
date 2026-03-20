@@ -55,7 +55,7 @@ export default function HeroSection() {
               Funding, Mentorship
             </p>
             <div className="hero-buttons">
-              <Link href="/contact" className="btn btn-primary">Contact us</Link>
+              <Link href="/contact" className="btn btn-primary">Apply</Link>
               <Link href="/about" className="btn btn-secondary">About</Link>  
             </div>
           </div>

@@ -126,7 +126,7 @@ export default function ServiceCards() {
                           className="service-card-link service-card-link-button"
                           onClick={() => openFormModal(service.formType)}
                         >
-                          <span>Get started</span>
+                          <span>Learn more</span>
                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9C2.33333 7.66667 5 5 5 5L1 1" stroke="currentColor"/>
                           </svg>
@@ -160,7 +160,7 @@ export default function ServiceCards() {
                         className="service-card-link service-card-link-button"
                         onClick={() => openFormModal(service.formType)}
                       >
-                        <span>Get started</span>
+                        <span>Learn more</span>
                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 9C2.33333 7.66667 5 5 5 5L1 1" stroke="currentColor"/>
                         </svg>
