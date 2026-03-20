@@ -13,7 +13,7 @@ const navServices = [
   },
   {
     title: 'Offerings For MSME',
-    subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
+    subtitle: 'Cash Flow Rescue  | Founder Freedom  | Revenue Engine ',
     href: '/services/msme-offerings',
     iconVariant: 'analytics',
   },
@@ -103,7 +103,7 @@ export default function Header() {
           </div>
         </nav>
         <div className="nav-actions">
-          <Link href="/contact" className="nav-cta">Contact us</Link>
+          <Link href="/contact" className="nav-cta">Apply</Link>
         </div>
       </div>
     </header>

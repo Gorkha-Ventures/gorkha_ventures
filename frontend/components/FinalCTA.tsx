@@ -9,7 +9,7 @@ export default function FinalCTA() {
             If you are building, growing, investing, or evolving — let's structure the journey.
           </h2>
           <Link href="/contact" className="final-cta-button">
-            Work With Gorkha →
+            Apply Now →
           </Link>
         </div>
       </div>

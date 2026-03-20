@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -13,23 +16,45 @@ export default function Footer() {
             priority
           />
         </div>
-        
+
         <div className="footer-content-right">
-          <div className="footer-brand">
-            <div className="footer-logo">
-              <Image
-                src="/logo_white.svg"
-                alt="Gorkha Ventures"
-                width={220}
-                height={32}
-                priority
-              />
+          <div className="footer-main">
+            <div className="footer-links-group">
+              <p className="footer-links-title">Offerings</p>
+              <nav className="footer-links-list" aria-label="Offerings">
+                <Link href="/services/offerings-for-founders" className="footer-link">Founders</Link>
+                <Link href="/services/msme-offerings" className="footer-link">MSME</Link>
+                <Link href="/services/offerings-for-investors" className="footer-link">Investors</Link>
+                <Link href="/services/offerings-for-job-seekers" className="footer-link">Job Seekers</Link>
+              </nav>
             </div>
-            <p className="footer-tagline">
-              Helping serious founders build scalable businesses from first customer to Series A.
-            </p>
+
+            <div className="footer-links-group">
+              <p className="footer-links-title">Explore</p>
+              <nav className="footer-links-list" aria-label="Explore">
+                <Link href="/about" className="footer-link">About Us</Link>
+                <a href="#" className="footer-link">Careers</a>
+                <a href="#" className="footer-link">Resources</a>
+                <a href="#" className="footer-link">People</a>
+              </nav>
+            </div>
+
+            <div className="footer-brand">
+              <div className="footer-logo">
+                <Image
+                  src="/logo_white.svg"
+                  alt="Gorkha Ventures"
+                  width={220}
+                  height={32}
+                  priority
+                />
+              </div>
+              <p className="footer-tagline">
+                Helping serious founders build scalable businesses from first customer to Series A.
+              </p>
+            </div>
           </div>
-          
+
           <div className="footer-social">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -48,6 +73,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        <p className="footer-copyright">© {currentYear} Gorkha Ventures</p>
       </div>
     </footer>
   )
