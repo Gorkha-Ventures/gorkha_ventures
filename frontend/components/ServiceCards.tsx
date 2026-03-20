@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import ContactForm, { type FormType } from './ContactForm'
+import Link from 'next/link'
 import GrowthAnimation from './GrowthAnimation'
 
 type Service = {
@@ -10,7 +9,7 @@ type Service = {
   description: string
   color: string
   icon: string
-  formType: FormType
+  href: string
   layout?: 'founders'
 }
 
@@ -22,7 +21,7 @@ const services: Service[] = [
     color: '#73d8e0',
     icon: '🚀',
     layout: 'founders',
-    formType: 'founder',
+    href: '/services/offerings-for-founders',
   },
   
   {
@@ -31,7 +30,7 @@ const services: Service[] = [
     description: 'We help micro, small and medium enterprises grow from first customer to Series A with hands-on support, capital, and operator-led guidance.',
     color: '#73d8e0',
     icon: '🏢',
-    formType: 'msme',
+    href: '/services/msme-offerings',
   },
   {
     title: 'Offerings For Investors',
@@ -39,7 +38,7 @@ const services: Service[] = [
     description: 'Access curated early-stage opportunities, portfolio company support, and co-investment options alongside Gorkha Ventures.',
     color: '#1a1a1a',
     icon: '📈',
-    formType: 'investor',
+    href: '/services/offerings-for-investors',
   },
   {
     title: 'Offerings for Job Seekers',
@@ -47,7 +46,7 @@ const services: Service[] = [
     description: 'Join fast-growing portfolio companies and startups we back. Find roles that match your skills and ambition in our network.',
     color: '#4a4a4a',
     icon: '💼',
-    formType: 'talent',
+    href: '/services/offerings-for-job-seekers',
   }
  
   
@@ -55,42 +54,6 @@ const services: Service[] = [
 ]
 
 export default function ServiceCards() {
-  const [selectedForm, setSelectedForm] = useState<FormType | ''>('')
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  function openFormModal(formType: FormType) {
-    setSelectedForm(formType)
-    setIsModalOpen(true)
-  }
-
-  function closeFormModal() {
-    setIsModalOpen(false)
-  }
-
-  useEffect(() => {
-    if (!isModalOpen) return
-
-    const { overflow } = document.body.style
-    document.body.style.overflow = 'hidden'
-
-    return () => {
-      document.body.style.overflow = overflow
-    }
-  }, [isModalOpen])
-
-  useEffect(() => {
-    if (!isModalOpen) return
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        closeFormModal()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isModalOpen])
-
   return (
     <section className="services-section">
       <div className="container">
@@ -121,16 +84,15 @@ export default function ServiceCards() {
                       <div className="service-card-content service-card-founders-content">
                         <p className="service-card-description">{service.description}</p>
 
-                        <button
-                          type="button"
+                        <Link
+                          href={service.href}
                           className="service-card-link service-card-link-button"
-                          onClick={() => openFormModal(service.formType)}
                         >
                           <span>Get started</span>
                           <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 9C2.33333 7.66667 5 5 5 5L1 1" stroke="currentColor"/>
                           </svg>
-                        </button>
+                        </Link>
                       </div>
                     </div>
 
@@ -155,16 +117,15 @@ export default function ServiceCards() {
                         {service.description}
                       </p>
 
-                      <button
-                        type="button"
+                      <Link
+                        href={service.href}
                         className="service-card-link service-card-link-button"
-                        onClick={() => openFormModal(service.formType)}
                       >
                         <span>Get started</span>
                         <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 9C2.33333 7.66667 5 5 5 5L1 1" stroke="currentColor"/>
                         </svg>
-                      </button>
+                      </Link>
                     </div>
 
                     {/* Visual */}
@@ -179,33 +140,6 @@ export default function ServiceCards() {
           })}
         </div>
 
-        {isModalOpen && selectedForm && (
-          <div
-            className="services-form-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="services-form-modal-title"
-            onClick={closeFormModal}
-          >
-            <div className="services-form-modal-content" onClick={(event) => event.stopPropagation()}>
-              <button
-                type="button"
-                className="services-form-modal-close"
-                aria-label="Close form"
-                onClick={closeFormModal}
-              >
-                x
-              </button>
-              <div className="services-form-modal-header">
-                <p className="services-form-modal-label">GET STARTED</p>
-                <h3 id="services-form-modal-title" className="services-form-modal-title">
-                  Share your details
-                </h3>
-              </div>
-              <ContactForm initialFormType={selectedForm} onBack={closeFormModal} />
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )

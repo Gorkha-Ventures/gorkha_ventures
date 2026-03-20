@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Gorkha Ventures - MSME Offerings',
   description:
-    'Apka Business, Hamari Zimmedari. Cash flow, systems, and growth support for Uttarakhand MSMEs.',
+    'Building Resilient Businesses. Cash flow, systems, and growth support for Uttarakhand MSMEs.',
 }
 
 export default function MsmeOfferingsPage() {
