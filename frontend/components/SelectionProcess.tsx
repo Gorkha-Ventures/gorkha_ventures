@@ -12,22 +12,17 @@ export default function SelectionProcess() {
       duration: '(30-60 min)',
       description: 'Deep conversation about traction, challenges, goals. We verify claims, you assess fit.'
     },
+    
     {
       number: 3,
-      title: 'Execution Sprint',
-      duration: '(48-72 hours)',
-      description: 'Behavioral task: Talk to 5 customers OR ship feature OR show metric growth. Proves you can hustle.'
-    },
-    {
-      number: 4,
       title: 'Due Diligence',
-      duration: '(1-2 weeks)',
+      duration: '(3-4 days)',
       description: 'Reference checks, customer calls, financial verification. We verify everything we can.'
     },
     {
-      number: 5,
+      number: 4,
       title: 'Decision',
-      duration: '(Within 3 weeks)',
+      duration: '(1 week)',
       description: 'Accept (with offer) OR Reject (with detailed feedback + reapply criteria) OR Waitlist (until milestones hit).'
     }
   ]
@@ -62,7 +57,7 @@ export default function SelectionProcess() {
         </div>
 
         <p className="selection-process-footer">
-          Expected timeline: 3-4 weeks from application to decision. We give detailed feedback even if we reject—we're building long-term relationships.
+          Expected timeline:1 week from application to decision. We give detailed feedback even if we reject—we're building long-term relationships.
         </p>
       </div>
     </section>
