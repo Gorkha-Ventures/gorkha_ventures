@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typography tokens: ../styles/site-common.css (--font-sans, --site-font-family) */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +15,19 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-sans);
     background-color: #0d0d0d;
     color: #e5e5e5;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Inherit site font; avoid per-page font-family in CSS modules */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
 }
 
 .container {
@@ -1887,12 +1897,18 @@ a.contact-info-value:hover {
     width: min(620px, 100%);
     max-height: calc(100vh - 180px);
     overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #1a1a1a;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
     padding: 18px 18px 16px;
     position: relative;
+}
+
+.services-form-modal-content::-webkit-scrollbar {
+    display: none;
 }
 
 .services-form-modal-close {

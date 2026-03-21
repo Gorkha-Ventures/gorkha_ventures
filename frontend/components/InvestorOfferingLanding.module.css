@@ -1,10 +1,9 @@
 .page {
-  --obsidian: #101820;
-  --deep-teal: #00313c;
-  --sky: #73d8e0;
-  --white: #fff;
-  --muted: rgba(255, 255, 255, 0.6);
-  font-family: 'Barlow Semi Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --obsidian: var(--offering-obsidian);
+  --deep-teal: var(--offering-deep-teal);
+  --sky: var(--offering-sky);
+  --white: var(--offering-heading-pure);
+  --muted: var(--offering-muted);
   background: var(--obsidian);
   color: var(--white);
 }
@@ -19,7 +18,7 @@
   background: rgba(16, 24, 32, 0.94);
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--offering-border);
 }
 
 .logo,
@@ -45,62 +44,108 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 72px;
+  padding: 86px 0 72px;
+  background: var(--offering-hero-grad-linear), var(--offering-hero-grad-radial), var(--offering-hero-base);
+  color: var(--offering-text-hero);
 }
 
-.tag {
+.heroShell {
+  max-width: 860px;
+  padding: 2.2rem 0 1.5rem;
+}
+
+.heroTag {
   display: inline-block;
-  border: 1px solid rgba(115, 216, 224, 0.3);
-  background: rgba(115, 216, 224, 0.1);
-  color: var(--sky);
-  padding: 6px 12px;
-  font-size: 11px;
-  letter-spacing: 0.16em;
+  background: var(--offering-tag-bg);
+  border: 1px solid var(--offering-tag-border);
+  padding: 7px 12px;
+  font-size: var(--offering-eyebrow-tight);
+  letter-spacing: var(--offering-letter-eyebrow-sm);
   text-transform: uppercase;
-  margin-bottom: 14px;
+  color: var(--sky);
+  margin-bottom: 2rem;
 }
 
-.hero h1 {
-  font-size: clamp(38px, 9vw, 86px);
-  line-height: 0.95;
+.heroHeading {
+  font-size: var(--offering-display);
+  font-weight: var(--offering-fw-display);
+  line-height: var(--offering-display-tight);
+  letter-spacing: 0.01em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 1.5rem;
+  color: var(--offering-heading);
 }
 
-.hero h1 span {
+.sky {
   color: var(--sky);
 }
 
-.hero p {
-  max-width: 650px;
-  color: var(--muted);
-  margin-bottom: 28px;
+.heroLead {
+  max-width: 760px;
+  color: var(--offering-lead);
+  font-size: var(--offering-body-lg);
+  line-height: var(--offering-line-hero-lead);
+  margin-bottom: 1.6rem;
 }
 
-.stats {
+.heroCtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.heroCtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 1.35rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--offering-letter-cta);
+  font-size: var(--offering-label-cta);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: var(--offering-cta-fill);
+  color: var(--offering-cta-ink);
+}
+
+.heroCtaPrimary:hover {
+  filter: brightness(1.06);
+}
+
+.heroStats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px;
+  padding-top: 1.7rem;
+  border-top: 1px solid var(--offering-border-stats);
 }
 
-.stats strong {
+.heroStats strong {
   display: block;
-  color: var(--sky);
-  font-size: 34px;
+  color: var(--offering-stat-num);
+  font-size: var(--offering-stat-num-size);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
 }
 
-.stats small {
-  color: var(--muted);
+.heroStats small {
+  display: block;
+  color: var(--offering-stats-label);
+  font-size: 0.78rem;
+  line-height: 1.35;
   text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.12em;
 }
 
 .section {
   padding: 72px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--offering-border);
 }
 
 .deep {
@@ -108,7 +153,8 @@
 }
 
 .section h2 {
-  font-size: clamp(30px, 5vw, 56px);
+  font-size: var(--offering-h2-section);
+  font-weight: var(--offering-fw-section);
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 24px;
@@ -119,10 +165,10 @@
 }
 
 .problemEyebrow {
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
+  font-size: var(--offering-eyebrow);
+  letter-spacing: var(--offering-letter-eyebrow);
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.8);
+  color: var(--offering-sky-soft);
   margin-bottom: 14px;
 }
 
@@ -138,16 +184,17 @@
 
 .problemHeading {
   max-width: 920px;
-  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-size: var(--offering-h2-investor-problem);
+  font-weight: var(--offering-fw-section);
   line-height: 0.97;
   margin-bottom: 16px;
 }
 
 .problemIntro {
   max-width: 860px;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.02rem;
-  line-height: 1.75;
+  color: var(--offering-muted-soft);
+  font-size: var(--offering-body);
+  line-height: var(--offering-line);
   margin-bottom: 28px;
 }
 
@@ -155,13 +202,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--offering-border);
 }
 
 .investorProblemCard {
   padding: 1.75rem 1.55rem 1.45rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid var(--offering-border);
+  border-bottom: 1px solid var(--offering-border);
   background: rgba(0, 0, 0, 0.08);
 }
 
@@ -580,6 +627,8 @@
   font-size: 0.76rem;
   font-weight: 700;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
 .engageTypes {
@@ -747,6 +796,8 @@
 .finalPrimary {
   background: var(--sky);
   color: var(--obsidian);
+  border: none;
+  cursor: pointer;
 }
 
 .finalSecondary {
@@ -767,7 +818,23 @@
 }
 
 @media (max-width: 900px) {
-  .stats,
+  .hero {
+    padding-top: 78px;
+  }
+
+  .heroShell {
+    padding: 1.6rem 0 1.2rem;
+  }
+
+  .heroLead {
+    font-size: 1.02rem;
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .grid2,
   .grid4,
   .table,

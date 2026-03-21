@@ -15,7 +15,7 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: 'Offerings For Founders',
+    title: 'Program for Founders',
     subtitle: 'Validation | Product strategy | GTM support',
     description: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
     color: '#73d8e0',
@@ -25,7 +25,7 @@ const services: Service[] = [
   },
   
   {
-    title: 'Offerings For MSME',
+    title: 'Program for MSME',
     subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     description: 'We help micro, small and medium enterprises grow from first customer to Series A with hands-on support, capital, and operator-led guidance.',
     color: '#73d8e0',
@@ -33,7 +33,7 @@ const services: Service[] = [
     href: '/services/msme-offerings',
   },
   {
-    title: 'Offerings For Investors',
+    title: 'Program for Investors',
     subtitle: 'Deal flow | Portfolio support | Co-investment',
     description: 'Access curated early-stage opportunities, portfolio company support, and co-investment options alongside Gorkha Ventures.',
     color: '#1a1a1a',
@@ -41,7 +41,7 @@ const services: Service[] = [
     href: '/services/offerings-for-investors',
   },
   {
-    title: 'Offerings for Job Seekers',
+    title: 'Program for Job Seekers',
     subtitle: 'Portfolio careers | Startup roles',
     description: 'Join fast-growing portfolio companies and startups we back. Find roles that match your skills and ambition in our network.',
     color: '#4a4a4a',

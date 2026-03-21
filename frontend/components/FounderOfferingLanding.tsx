@@ -1,9 +1,12 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import ContactForm from './ContactForm'
 import styles from './FounderOfferingLanding.module.css'
 
 export default function FounderOfferingLanding() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) =>
@@ -20,30 +23,73 @@ export default function FounderOfferingLanding() {
     return () => io.disconnect()
   }, [])
 
+  useEffect(() => {
+    if (!isModalOpen) return
+
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = overflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isModalOpen])
+
   return (
     <div className={styles.page}>
       <section id="hero" className={styles.hero}>
-        <div className={styles.heroGlow} />
         <div className={styles.wrap}>
-          <p className={styles.eyebrow}>Gorkha Ventures - Operator-Led Execution</p>
-          <h1 className={styles.h1}>
-            Build
-            <br />
-            Beyond
-            <br />
-            <span className={styles.sky}>Ideas.</span>
-          </h1>
-          <p className={styles.heroSub}>
-            We help serious founders turn ideas into scalable, resilient businesses - and raise
-            capital when it actually matters.
-          </p>
-          <p className={styles.heroSupport}>
-            Gorkha Ventures works alongside founders to bring structure, discipline, and clarity
-            to the entire journey - from idea to execution to capital.
-          </p>
-          <div className={styles.ctaRow}>
-            <a href="#apply" className={styles.btnFill}>Apply to Founder Program -&gt;</a>
-            <a href="#what" className={styles.btnGhost}>See How We Work -&gt;</a>
+          <div className={styles.heroShell}>
+            <p className={styles.heroTag}>Gorkha Ventures - Operator-Led Execution</p>
+            <h1 className={styles.heroHeading}>
+              Build
+              <br />
+              Beyond
+              <br />
+              <span className={styles.sky}>Ideas.</span>
+            </h1>
+            <p className={styles.heroLead}>
+              We help serious founders turn ideas into scalable, resilient businesses - and raise
+              capital when it actually matters.
+            </p>
+            <p className={styles.heroSubline}>
+              Gorkha Ventures works alongside founders to bring structure, discipline, and clarity
+              to the entire journey - from idea to execution to capital.
+            </p>
+            <div className={styles.heroCtaRow}>
+              <button
+                type="button"
+                className={styles.heroCtaPrimary}
+                onClick={() => setIsModalOpen(true)}
+              >
+                Apply to Founder Program -&gt;
+              </button>
+              <a href="#what" className={styles.heroCtaGhost}>
+                See how we work -&gt;
+              </a>
+            </div>
+            <div className={styles.heroStats}>
+              <div>
+                <strong>&gt;80%</strong>
+                <small>of early failures are execution and structure, not the idea</small>
+              </div>
+              <div>
+                <strong>12–18 mo</strong>
+                <small>window where decisions compound the fastest</small>
+              </div>
+              <div>
+                <strong>&lt;5%</strong>
+                <small>of startups reach investor-ready clarity without support</small>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -242,8 +288,14 @@ export default function FounderOfferingLanding() {
             <br />
             Resilient companies <span className={styles.sky}>are not.</span>
           </h2>
-          <p className={styles.heroSub}>If you&apos;re serious about building - let&apos;s begin.</p>
-          <a href="/contact" className={styles.btnFill}>Apply to Founder Program -&gt;</a>
+          <p className={styles.applyLead}>If you&apos;re serious about building - let&apos;s begin.</p>
+          <button
+            type="button"
+            className={styles.btnFill}
+            onClick={() => setIsModalOpen(true)}
+          >
+            Apply to Founder Program -&gt;
+          </button>
         </div>
       </section>
 
@@ -251,7 +303,7 @@ export default function FounderOfferingLanding() {
         <div className={styles.wrap}>
           <div className={styles.investorStrip}>
             <div>
-              <p className={styles.label}>Offering for Investors</p>
+              <p className={styles.label}>Program for Investors</p>
               <h2 className={styles.h2}>Access Execution-Ready Deal Flow.</h2>
               <p className={styles.whatBody}>
                 We work with investors who want more than a deck - curated pipeline access,
@@ -260,11 +312,39 @@ export default function FounderOfferingLanding() {
               </p>
             </div>
             <a href="/services/offerings-for-investors" className={styles.btnFill}>
-              Explore Investor Offering -&gt;
+              Explore Investor Program -&gt;
             </a>
           </div>
         </div>
       </section>
+
+      {isModalOpen && (
+        <div
+          className="services-form-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="founder-apply-modal-title"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div className="services-form-modal-content" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="services-form-modal-close"
+              aria-label="Close form"
+              onClick={() => setIsModalOpen(false)}
+            >
+              x
+            </button>
+            <div className="services-form-modal-header">
+              <p className="services-form-modal-label">FOUNDER APPLICATION</p>
+              <h3 id="founder-apply-modal-title" className="services-form-modal-title">
+                Apply to Founder Program
+              </h3>
+            </div>
+            <ContactForm initialFormType="founder" hideSelector onBack={() => setIsModalOpen(false)} />
+          </div>
+        </div>
+      )}
 
     </div>
   )
