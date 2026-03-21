@@ -25,8 +25,8 @@ const services: Service[] = [
   },
   
   {
-    title: 'Program for MSME',
-    subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
+    title: 'Offerings For MSME',
+    subtitle: 'Cash Flow Rescue  | Founder Freedom  | Revenue Engine ',
     description: 'We help micro, small and medium enterprises grow from first customer to Series A with hands-on support, capital, and operator-led guidance.',
     color: '#73d8e0',
     icon: '🏢',
@@ -76,7 +76,7 @@ export default function ServiceCards() {
                     <div className="service-card-founders-top">
                       <div className="service-card-header">
                         <h2 className="service-card-title">{service.title}</h2>
-                        <p className="service-card-subtitle" style={{ color: service.color }}>
+                        <p className="service-card-subtitle">
                           {service.subtitle}
                         </p>
                       </div>
@@ -108,7 +108,7 @@ export default function ServiceCards() {
                         <h2 className="service-card-title">
                           {service.title}
                         </h2>
-                        <p className="service-card-subtitle" style={{ color: service.color }}>
+                        <p className="service-card-subtitle">
                           {service.subtitle}
                         </p>
                       </div>

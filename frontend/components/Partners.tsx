@@ -12,9 +12,15 @@ export default function Partners() {
         .map((fileName) => {
           const nameFromFile = fileName.replace(/\.[^/.]+$/, '').replace(/[-_]+/g, ' ')
           const label = nameFromFile.charAt(0).toUpperCase() + nameFromFile.slice(1)
+          const slug = fileName
+            .replace(/\.[^/.]+$/, '')
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
           return {
             name: label,
             logo: `/partners/${fileName}`,
+            slug,
           }
         })
     : []
@@ -24,7 +30,7 @@ export default function Partners() {
       <div className="container">
         <div className="partners-logos">
           {partners.map((partner, index) => (
-            <div key={index} className="partner-logo">
+            <div key={index} className={`partner-logo partner-logo-${partner.slug}`}>
               <Image
                 src={partner.logo}
                 alt={partner.name}
