@@ -1,0 +1,102 @@
+/**
+ * Gorkha Ventures — shared design tokens & typography
+ * Imported before globals.css so variables apply site-wide.
+ * Do not set font-family on page wrappers in CSS modules; use inheritance from body.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap');
+
+:root {
+  /* Primary stack — use var(--font-sans) or var(--site-font-family) anywhere */
+  --font-sans:
+    'Nunito Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    sans-serif;
+  --site-font-family: var(--font-sans);
+
+  /* -------------------------------------------------------------------------
+   * Program landing pages (Founders / Investors / MSME) — shared palette & type
+   * ------------------------------------------------------------------------- */
+  --offering-obsidian: #101820;
+  --offering-deep-teal: #00313c;
+  --offering-hero-base: #061427;
+  --offering-section-blue: #022c37;
+  --offering-section-navy: #061a2e;
+
+  --offering-sky: #73d8e0;
+  --offering-sky-bright: #69d0da;
+  --offering-sky-soft: rgba(115, 216, 224, 0.8);
+  --offering-cta-fill: #7ed4df;
+  --offering-cta-ink: #0f2531;
+  --offering-stat-num: #66d5e3;
+
+  --offering-text-hero: #ecf4fa;
+  --offering-heading: #f2f7fb;
+  --offering-heading-pure: #ffffff;
+  --offering-lead: rgba(216, 228, 236, 0.68);
+  --offering-subline: rgba(181, 194, 204, 0.5);
+  --offering-muted: rgba(255, 255, 255, 0.6);
+  --offering-muted-soft: rgba(255, 255, 255, 0.5);
+  --offering-muted-faint: rgba(255, 255, 255, 0.35);
+  --offering-stats-label: rgba(143, 162, 174, 0.75);
+
+  --offering-ink: #1c2b31;
+  --offering-muted-ink: #5a7a82;
+
+  --offering-border: rgba(255, 255, 255, 0.1);
+  --offering-border-teal: rgba(115, 216, 224, 0.12);
+  --offering-border-stats: rgba(124, 148, 167, 0.28);
+  --offering-tag-border: rgba(115, 216, 224, 0.28);
+  --offering-tag-bg: rgba(41, 86, 105, 0.38);
+  --offering-ghost-border: rgba(115, 216, 224, 0.45);
+  --offering-ghost-hover: rgba(115, 216, 224, 0.75);
+
+  --offering-hero-grad-linear: linear-gradient(
+    90deg,
+    rgba(3, 19, 37, 0.98) 0%,
+    rgba(4, 16, 31, 0.96) 70%,
+    rgba(0, 60, 73, 0.72) 100%
+  );
+  --offering-hero-grad-radial: radial-gradient(
+    circle at 78% 24%,
+    rgba(0, 143, 162, 0.24) 0%,
+    transparent 42%
+  );
+
+  /* Typography scale (Nunito Sans sitewide) */
+  --offering-display: clamp(2.65rem, 9vw, 6.75rem);
+  --offering-display-tight: 0.87;
+  --offering-h2-section: clamp(1.75rem, 4.5vw, 3.15rem);
+  --offering-h2-hero-sub: clamp(1.65rem, 3.9vw, 3.85rem);
+  --offering-h2-feature: clamp(1.85rem, 4.6vw, 4.25rem);
+  --offering-h2-investor-problem: clamp(2.2rem, 6vw, 4.5rem);
+  --offering-body: 1.02rem;
+  --offering-body-lg: 1.1rem;
+  --offering-body-sm: 0.95rem;
+  --offering-line: 1.75;
+  --offering-line-relaxed: 1.78;
+  --offering-line-hero-lead: 1.72;
+  --offering-eyebrow: 0.62rem;
+  --offering-eyebrow-tight: 0.58rem;
+  --offering-label-cta: 0.62rem;
+  --offering-letter-eyebrow: 0.2em;
+  --offering-letter-eyebrow-sm: 0.18em;
+  --offering-letter-cta: 0.14em;
+  --offering-stat-num-size: clamp(1.65rem, 3.4vw, 2.75rem);
+
+  /* Heading weights (Tailwind preflight uses inherit on h1–h6) */
+  --offering-fw-display: 800;
+  --offering-fw-section: 700;
+}
+
+/*
+ * Program landings (FounderOfferingLanding, InvestorOfferingLanding, MsmeOfferingLanding)
+ * should prefer these tokens in CSS modules so palette and type scale stay aligned.
+ */

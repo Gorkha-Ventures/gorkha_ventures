@@ -15,7 +15,7 @@ const services: Record<string, {
   ctaText: string
 }> = {
   'offerings-for-founders': {
-    title: 'Offerings For Founders',
+    title: 'Program for Founders',
     subtitle: 'Validation | Product strategy | GTM support',
     description: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
     longDescription: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
@@ -33,7 +33,7 @@ const services: Record<string, {
     title: 'Offerings For MSME',
     subtitle: 'Cash Flow Rescue  | Founder Freedom  | Revenue Engine ',
     description: 'We help micro, small and medium enterprises grow from first customer to Series A.',
-    longDescription: 'Gorkha Ventures supports MSMEs with end-to-end offerings: pre-seed incubation to validate and scale your idea, seed funding when you\'re ready to grow, and hands-on mentorship from operators who\'ve built companies. We focus on evidence-based execution and long-term partnership so you can go from first customer to Series A with clarity and support.',
+    longDescription: 'Gorkha Ventures supports MSMEs with an end-to-end program: pre-seed incubation to validate and scale your idea, seed funding when you\'re ready to grow, and hands-on mentorship from operators who\'ve built companies. We focus on evidence-based execution and long-term partnership so you can go from first customer to Series A with clarity and support.',
     icon: '🏢',
     color: '#73d8e0',
     highlights: [
@@ -45,10 +45,10 @@ const services: Record<string, {
     ctaText: 'Apply for MSME support'
   },
   'offerings-for-investors': {
-    title: 'Offerings for Investors',
+    title: 'Program for Investors',
     subtitle: 'Deal flow | Portfolio support | Co-investment',
     description: 'Access curated early-stage opportunities and co-invest alongside Gorkha Ventures.',
-    longDescription: 'We offer investors access to our pipeline of vetted early-stage companies, portfolio company updates and support, and co-investment opportunities. Partner with us to participate in pre-seed and seed rounds in our focus sectors, with the same rigorous selection and operator-led approach we apply to our own investments.',
+    longDescription: 'Our investor program gives you access to our pipeline of vetted early-stage companies, portfolio company updates and support, and co-investment opportunities. Partner with us to participate in pre-seed and seed rounds in our focus sectors, with the same rigorous selection and operator-led approach we apply to our own investments.',
     icon: '📈',
     color: '#1a1a1a',
     highlights: [
@@ -60,7 +60,7 @@ const services: Record<string, {
     ctaText: 'Explore investor opportunities'
   },
   'offerings-for-job-seekers': {
-    title: 'Offerings for Job Seekers',
+    title: 'Program for Job Seekers',
     subtitle: 'Portfolio careers | Startup roles',
     description: 'Join fast-growing portfolio companies and startups in the Gorkha network.',
     longDescription: 'We connect talented job seekers with roles at our portfolio companies and the broader startup ecosystem we support. Whether you\'re looking for your first startup role or a senior position, we help match you with teams that are building with ambition and rigour.',

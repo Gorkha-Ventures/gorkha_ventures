@@ -43,9 +43,10 @@ const formConfigs: Record<FormType, FormConfig> = {
 type ContactFormProps = {
   initialFormType?: FormType | ''
   onBack?: () => void
+  hideSelector?: boolean
 }
 
-export default function ContactForm({ initialFormType = '', onBack }: ContactFormProps) {
+export default function ContactForm({ initialFormType = '', onBack, hideSelector = false }: ContactFormProps) {
   const [selectedForm, setSelectedForm] = useState<FormType | ''>(initialFormType)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -123,36 +124,38 @@ export default function ContactForm({ initialFormType = '', onBack }: ContactFor
 
   return (
     <div className="contact-form-shell">
-      <div className={`contact-form-selector-wrap ${selectedForm ? 'is-selected' : ''}`}>
-      <div className="contact-form-selector-line">
-        <span className="contact-form-selector-text">You are</span>
-        <span className="contact-form-selector-field">
-          <select
-            className="contact-form-selector-dropdown"
-            value={selectedForm}
-            onChange={(e) => {
-              setSelectedForm(e.target.value as FormType | '')
-              setStatus('idle')
-              setErrorMessage('')
-            }}
-            disabled={status === 'sending'}
-            aria-label="Select form type"
-          >
-            <option value="">Select</option>
-            {(Object.keys(formConfigs) as FormType[]).map((type) => (
-              <option key={type} value={type}>
-                {formConfigs[type].optionLabel}
-              </option>
-            ))}
-          </select>
-          <span className="contact-form-selector-arrow" aria-hidden>
-            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </span>
-      </div>
-      </div>
+      {!hideSelector && (
+        <div className={`contact-form-selector-wrap ${selectedForm ? 'is-selected' : ''}`}>
+          <div className="contact-form-selector-line">
+            <span className="contact-form-selector-text">You are</span>
+            <span className="contact-form-selector-field">
+              <select
+                className="contact-form-selector-dropdown"
+                value={selectedForm}
+                onChange={(e) => {
+                  setSelectedForm(e.target.value as FormType | '')
+                  setStatus('idle')
+                  setErrorMessage('')
+                }}
+                disabled={status === 'sending'}
+                aria-label="Select form type"
+              >
+                <option value="">Select</option>
+                {(Object.keys(formConfigs) as FormType[]).map((type) => (
+                  <option key={type} value={type}>
+                    {formConfigs[type].optionLabel}
+                  </option>
+                ))}
+              </select>
+              <span className="contact-form-selector-arrow" aria-hidden>
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+      )}
 
       <div className={`contact-form-reveal ${selectedForm ? 'is-visible' : ''}`}>
       {!!selectedForm && (
