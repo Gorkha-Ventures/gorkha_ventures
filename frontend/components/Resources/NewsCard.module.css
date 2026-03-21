@@ -1,0 +1,207 @@
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 14px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d2847 50%, #0a1628 100%);
+}
+
+.mediaImage {
+  object-fit: cover;
+}
+
+.mediaPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.02em;
+}
+
+.body {
+  padding: 1.25rem 1.35rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  font-size: 0.8125rem;
+  color: #a3a3a3;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tagFunding {
+  background: rgba(234, 179, 8, 0.2);
+  color: #facc15;
+}
+
+.tagIndustry {
+  background: rgba(34, 197, 94, 0.18);
+  color: #4ade80;
+}
+
+.tagPolicy {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.tagExit {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+.tagRecognition {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #fafafa;
+  letter-spacing: -0.02em;
+}
+
+.summary {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #a3a3a3;
+  flex: 1;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.25rem;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #73d8e0, #0d4f6e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.authorText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.authorName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e5e5e5;
+}
+
+.authorRole {
+  font-size: 0.75rem;
+  color: #737373;
+}
+
+/* Compact (list row) */
+.compact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1rem 1.25rem;
+  padding: 1.1rem 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.compact:first-of-type {
+  padding-top: 0;
+}
+
+.compact:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.compact:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+}
+
+.compact .title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.compactMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  color: #737373;
+}
+
+.index {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #525252;
+  letter-spacing: 0.02em;
+  padding-top: 0.15rem;
+}
+
+@media (min-width: 768px) {
+  .featured .title {
+    font-size: 1.35rem;
+  }
+}

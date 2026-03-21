@@ -92,14 +92,13 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            <a
-              href="https://news.gorkhaventures.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href=""//-->/Resources
               className="nav-link nav-resource-button"
+              prefetch={false}
             >
               Resources
-            </a>
+            </Link>
           </div>
         </nav>
         <div className="nav-actions">

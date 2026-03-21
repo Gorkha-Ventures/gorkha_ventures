@@ -34,7 +34,7 @@ export default function Footer() {
               <nav className="footer-links-list" aria-label="Explore">
                 <Link href="/about" className="footer-link">About Us</Link>
                 <a href="#" className="footer-link">Careers</a>
-                <a href="#" className="footer-link">Resources</a>
+                <Link href="/Resources" className="footer-link">Resources</Link>
                 <a href="#" className="footer-link">People</a>
               </nav>
             </div>

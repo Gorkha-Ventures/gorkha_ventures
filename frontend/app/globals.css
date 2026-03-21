@@ -65,6 +65,14 @@ textarea {
     gap: 24px;
 }
 
+/* Reserve space for absolute logo + Apply so centered nav (Services / Resources) stays clickable */
+@media (min-width: 969px) {
+    .header-inner {
+        padding-left: 172px;
+        padding-right: 132px;
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
