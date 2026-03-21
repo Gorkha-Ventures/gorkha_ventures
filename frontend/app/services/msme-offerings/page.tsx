@@ -4,12 +4,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Gorkha Ventures - MSME Offerings',
+  title: 'Gorkha Ventures - Program for MSME',
   description:
     'Building Resilient Businesses. Cash flow, systems, and growth support for Uttarakhand MSMEs.',
 }
 
-export default function MsmeOfferingsPage() {
+export default function ProgramForMsmePage() {
   return (
     <>
       <Header />

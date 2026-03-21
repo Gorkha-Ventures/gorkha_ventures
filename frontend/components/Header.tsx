@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 const navServices = [
   {
-    title: 'Offerings for Founders',
+    title: 'Program for Founders',
     subtitle: 'Validation | Product strategy | GTM support',
     href: '/services/offerings-for-founders',
     iconVariant: 'founders',
@@ -18,13 +18,13 @@ const navServices = [
     iconVariant: 'analytics',
   },
   {
-    title: 'Offerings for Investors',
+    title: 'Program for Investors',
     subtitle: 'Deal flow | Portfolio support | Co-investment',
     href: '/services/offerings-for-investors',
     iconVariant: 'growth',
   },
   {
-    title: 'Offerings for Job Seekers',
+    title: 'Program for Job Seekers',
     subtitle: 'Portfolio careers | Startup roles',
     href: '/services/offerings-for-job-seekers',
     iconVariant: 'talent',

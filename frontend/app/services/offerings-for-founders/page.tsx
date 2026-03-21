@@ -4,12 +4,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Gorkha Ventures - Build Beyond Ideas',
+  title: 'Gorkha Ventures - Program for Founders',
   description:
     'Operator-led execution for founders: clarity, disciplined execution, and fundraise readiness.',
 }
 
-export default function OfferingsForFoundersPage() {
+export default function ProgramForFoundersPage() {
   return (
     <>
       <Header />

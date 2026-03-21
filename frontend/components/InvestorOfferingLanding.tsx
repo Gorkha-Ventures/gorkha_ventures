@@ -1,9 +1,12 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import ContactForm from './ContactForm'
 import styles from './InvestorOfferingLanding.module.css'
 
 export default function InvestorOfferingLanding() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) =>
@@ -19,22 +22,62 @@ export default function InvestorOfferingLanding() {
     return () => io.disconnect()
   }, [])
 
+  useEffect(() => {
+    if (!isModalOpen) return
+
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = overflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isModalOpen])
+
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
         <div className={styles.wrap}>
-          <p className={styles.tag}>Investor Offering</p>
-          <h1>
-            Where Discipline Meets <span>Capital.</span>
-          </h1>
-          <p>
-            Access execution-ready founders with stronger structure, clearer diligence signal,
-            and better post-investment operating support.
-          </p>
-          <div className={styles.stats}>
-            <div><strong>~65%</strong><small>failures are execution failures</small></div>
-            <div><strong>3-5x</strong><small>better capital efficiency with structure first</small></div>
-            <div><strong>1 in 10</strong><small>founders meet institutional-grade rigor</small></div>
+          <div className={styles.heroShell}>
+            <p className={styles.heroTag}>Investor Program</p>
+            <h1 className={styles.heroHeading}>
+              Where Discipline Meets <span className={styles.sky}>Capital.</span>
+            </h1>
+            <p className={styles.heroLead}>
+              Access execution-ready founders with stronger structure, clearer diligence signal,
+              and better post-investment operating support.
+            </p>
+            <div className={styles.heroCtaRow}>
+              <button
+                type="button"
+                className={styles.heroCtaPrimary}
+                onClick={() => setIsModalOpen(true)}
+              >
+                Request Investor Briefing -&gt;
+              </button>
+            </div>
+            <div className={styles.heroStats}>
+              <div>
+                <strong>~65%</strong>
+                <small>failures are execution failures</small>
+              </div>
+              <div>
+                <strong>3-5x</strong>
+                <small>better capital efficiency with structure first</small>
+              </div>
+              <div>
+                <strong>1 in 10</strong>
+                <small>founders meet institutional-grade rigor</small>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -153,7 +196,7 @@ export default function InvestorOfferingLanding() {
 
       <section className={`${styles.section} ${styles.deep} ${styles.fade} ${styles.pillarsSection}`}>
         <div className={styles.wrap}>
-          <p className={styles.problemEyebrow}>What We Offer Investors</p>
+          <p className={styles.problemEyebrow}>What the Investor Program Includes</p>
           <h2 className={styles.problemHeading}>Three Things You Can&apos;t Get From A Deck.</h2>
           <p className={styles.problemIntro}>
             Our value to investors is not a curated list of startups. It&apos;s a fundamentally
@@ -377,9 +420,13 @@ export default function InvestorOfferingLanding() {
                 ongoing pipeline relationships. Every structure is built around mutual conviction,
                 not transactional deal flow. We don&apos;t send volume. We send signal.
               </p>
-              <a href="mailto:gorkhaventures@gmail.com" className={styles.engageButton}>
+              <button
+                type="button"
+                className={styles.engageButton}
+                onClick={() => setIsModalOpen(true)}
+              >
                 Connect With Us -&gt;
-              </a>
+              </button>
             </div>
 
             <div className={styles.engageTypes}>
@@ -424,12 +471,16 @@ export default function InvestorOfferingLanding() {
             </h2>
             <p className={styles.finalSub}>
               If you&apos;re looking for early-stage deal flow with genuine execution signal -
-              let&apos;s talk about what Gorkha can offer you.
+              let&apos;s talk about what the investor program includes for you.
             </p>
             <div className={styles.finalButtons}>
-              <a href="mailto:gorkhaventures@gmail.com" className={styles.finalPrimary}>
+              <button
+                type="button"
+                className={styles.finalPrimary}
+                onClick={() => setIsModalOpen(true)}
+              >
                 Request Investor Briefing -&gt;
-              </a>
+              </button>
               <a href="/services/offerings-for-founders" className={styles.finalSecondary}>
                 View Founder Program
               </a>
@@ -437,6 +488,34 @@ export default function InvestorOfferingLanding() {
           </div>
         </div>
       </section>
+
+      {isModalOpen && (
+        <div
+          className="services-form-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="investor-apply-modal-title"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div className="services-form-modal-content" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="services-form-modal-close"
+              aria-label="Close form"
+              onClick={() => setIsModalOpen(false)}
+            >
+              x
+            </button>
+            <div className="services-form-modal-header">
+              <p className="services-form-modal-label">INVESTOR BRIEFING</p>
+              <h3 id="investor-apply-modal-title" className="services-form-modal-title">
+                Request Investor Briefing
+              </h3>
+            </div>
+            <ContactForm initialFormType="investor" hideSelector onBack={() => setIsModalOpen(false)} />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
