@@ -6,6 +6,8 @@ import Image from "next/image";
 interface Member {
   name: string;
   role: string;
+  company: string;
+  category: string;
   bg: string;
   initials: string;
   image?: string;
@@ -14,59 +16,174 @@ interface Member {
 const members: Member[] = [
   { 
     name: "Abimanyu Saxena",
-    role: "Co-Founder, Scaler",
-    image: "https://framerusercontent.com/images/6vQLKCrbJ5Zj4kEiUPzTSwWxmLQ.jpg?width=2268&height=4032",
+    role: "Co-Founder",
+    company: "Scaler",
+    category: "mentor",
+    image: "/mentors/abhimanyu.png",
     bg: "#3a5a8c", 
     initials: "AS" 
   },
   { 
     name: "Parminder Singh", 
-    role: "Founder, Tempers AI",
-    image: "https://framerusercontent.com/images/DCtW3lLtTM35ABrYoEuBt0qjC8.jpg?width=2268&height=4032", 
+    role: "Founder",
+    company: "Redscope.AI",
+    category: "mentor",
+    image: "/mentors/Parminder.jpeg", 
     bg: "#b84040", 
     initials: "PS" 
   },
   { 
     name: "Gaurav Agrawal", 
-    role: "Founder & CEO, Ascendra Advisors", 
-    image: "https://framerusercontent.com/images/0fGrCd9nA2HPeC5F3r48EEU0hw.jpg?width=2119&height=3867",
+    role: "Founder & CEO",
+    company: "Ascendra Advisors",
+    category: "mentor",
+    image: "/mentors/gaurav.jpg",
     bg: "#4a4a4a", 
     initials: "GA" 
   },
   { 
     name: "Divya Tak", 
-    role: "Founder, Joyus Studio", 
-    image: "https://framerusercontent.com/images/lJNh5UBNMKTUklAVu5xj6ZuJIU.jpeg?width=1402&height=1784",
+    role: "Founder",
+    company: "Joyus Studio",
+    category: "mentor",
+    image: "/mentors/divya.jpg",
     bg: "#5a7a5a", 
     initials: "DT" 
   },
   { 
-    name: "Riya Mehta", 
-    role: "CTO, Finnovate Labs", 
-    image: "https://framerusercontent.com/images/UQE6L2hcUnKd7rRDY9L3OsycKo.jpg?width=2268&height=4032",
+    name: "Preeti Kumbhaj", 
+    role: "Co-Founder", 
+    company: "Jaagr Mind",
+    category: "mentor",
+    image: "/mentors/Preeti.png",
     bg: "#7a4a8c", 
-    initials: "RM" 
+    initials: "PK" 
   },
   { 
-    name: "Arjun Kapoor", 
-    role: "MD, Sequoia India", 
-    image: "https://framerusercontent.com/images/6vQLKCrbJ5Zj4kEiUPzTSwWxmLQ.jpg?width=2268&height=4032",
-    bg: "#3a6a6a", 
-    initials: "AK" 
+    name: "Shubham Pandey", 
+    role: "Founder", 
+    company: "OneLeap",
+    category: "mentor",
+    image: "/mentors/shubhan.png",
+    bg: "#7a4a8c", 
+    initials: "SP" 
   },
   { 
-    name: "Sneha Bose", 
-    role: "CEO, GreenPath Ventures", 
-    image: "https://framerusercontent.com/images/ZnmU6KfWeNClmiFBYmEYSfaD6k.jpg?width=2140&height=2611",
-    bg: "#8c5a3a", 
+    name: "Dhrupad Shrivastava", 
+    role: "Founder", 
+    company: "Dumpum",
+    category: "mentor",
+    image: "/mentors/Dhrupad.png",
+    bg: "#7a4a8c", 
+    initials: "DS" 
+  },
+  {
+    name: "Dr Rajneesh Negi",
+    role: "Founder & Director, PMT India",
+    company: "Ganga Entrepreneurs Network",
+    category: "mentor",
+    image: "/mentors/Rajneesh.png",  
+    bg: "#7a4a8c", 
+    initials: "RN" 
+  },
+  {
+    name: "Mudit Goyal",
+    role: "Head of AI Product",
+    company: "McFee",
+    category: "mentor",
+    image: "/mentors/mudit.png",
+    bg: "#7a4a8c", 
+    initials: "MG" 
+  },
+  {
+    name: "Dr.Srishty P. Gajbhiye",
+    role: "Chief Emotional Health Architect",
+    company: "Jaagr Mind",
+    category: "mentor",
+    image: "/mentors/Shrishti.png",
+    bg: "#7a4a8c", 
+    initials: "SG" 
+  },
+  {
+    name: "Jyoti Malhotra",
+    role: "Co-Founder",
+    company: "SoJo Marketing",
+    category: "mentor",
+    image: "/mentors/jyoti.png",
+    bg: "#7a4a8c", 
+    initials: "JM" 
+  },
+  {
+    name: "Apurv Singh Baghel",
+    role: "Group Manager",
+    company: "NEC Corp",
+    category: "mentor",
+    image: "/mentors/Apoorv.png",
+    bg: "#7a4a8c", 
+    initials: "ASB" 
+  },
+  {
+    name: "Saurabh Saxena",
+    role: "Co-Founder",
+    company: "Jaagr Mind",
+    category: "mentor",
+    image: "/mentors/Saurabh.png",
+    bg: "#7a4a8c", 
+    initials: "SS" 
+  },
+  {
+    name: "Vibhu Rishi",
+    role: "Seior Product Manager",
+    company: "Mcfee",
+    category: "mentor",
+    image: "/mentors/vibhu.png",
+    bg: "#7a4a8c", 
+    initials: "VR" 
+  },
+  {
+    name: "Rachna K",
+    role: "Head CSR",
+    company: "IDFC Firdt Bank",
+    category: "mentor",
+    image: "/mentors/Rachna.png",
+    bg: "#7a4a8c", 
+    initials: "RK" 
+  },
+  {
+    name: "Bhavik Rasyara",
+    role: "Managing Partner",
+    company: "Pravah Capital",
+    category: "investor",
+    image: "/investors/Bhavik.png",
+    bg: "#7a4a8c", 
+    initials: "BR" 
+  },
+  {
+    name: "Saurabh Bhatnagar",
+    role: "Co-Founder",
+    company: "Flexifunnel",
+    category: "mentor",
+    image: "/mentors/SB.png",
+    bg: "#7a4a8c", 
     initials: "SB" 
   },
-  { 
-    name: "Vikram Nair", 
-    role: "Partner, Lightspeed",
-    image: "https://framerusercontent.com/images/OSU29EXIYnoRuF7xb9vx4RbgOQ.jpg?width=3024&height=2949", 
-    bg: "#4a5a8c", 
-    initials: "VN" 
+  {
+    name: "Abhineet Kumar",
+    role: "Co-Founder",
+    company: "Rockethealth",
+    category: "mentor",
+    image: "/mentors/Abhineet.png",
+    bg: "#7a4a8c", 
+    initials: "AB" 
+  },
+  {
+    name: "Bindu Reddy",
+    role: "Investor",
+    company: "Dexter Capital",
+    category: "investor",
+    image: "/investors/Bindu.png",
+    bg: "#7a4a8c", 
+    initials: "BR" 
   },
 ];
 
@@ -82,15 +199,18 @@ function Card({ member }: { member: Member }) {
       style={{
         flexShrink: 0,
         width: "200px",
-        cursor: "pointer",
+        borderRadius: "20px",
+        padding: "10px",
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.22)",
       }}
-      className="group"
     >
       <div
         style={{
-          width: "200px",
+          width: "100%",
           height: "210px",
-          borderRadius: "20px",
+          borderRadius: "14px",
           overflow: "hidden",
           position: "relative",
         }}
@@ -101,7 +221,7 @@ function Card({ member }: { member: Member }) {
             alt={member.name}
             fill
             style={{ objectFit: "cover" }}
-            className="transition-transform duration-[450ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
+            className="grayscale"
           />
         ) : (
           <div
@@ -115,50 +235,55 @@ function Card({ member }: { member: Member }) {
               fontWeight: 600,
               color: "#fff",
               background: member.bg,
-              transition: "transform 450ms cubic-bezier(0.25,0.46,0.45,0.94)",
             }}
-            className="group-hover:scale-105"
           >
             {member.initials}
           </div>
         )}
-
-        {/* Gradient overlay */}
-        <div
+      </div>
+      <div
+        style={{
+          marginTop: "10px",
+          padding: "0 2px 2px",
+          textAlign: "left",
+        }}
+      >
+        <h3
           style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: "18px 14px 14px",
-            background: "linear-gradient(rgba(255,255,255,0) 0%, rgba(0,0,0,0.52) 100%)",
+            fontSize: "16px",
+            fontWeight: 500,
+            color: "#ffffff",
+            margin: "0 0 3px",
+            letterSpacing: "-0.04em",
+            lineHeight: "1.35",
           }}
         >
-          <h3
-            style={{
-              fontSize: "16px",
-              fontWeight: 500,
-              color: "#ffffff",
-              margin: "0 0 3px",
-              letterSpacing: "-0.04em",
-              lineHeight: "1.4",
-            }}
-          >
-            {member.name}
-          </h3>
-          <p
-            style={{
-              fontSize: "12px",
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.82)",
-              margin: 0,
-              letterSpacing: "-0.03em",
-              lineHeight: "1.4",
-            }}
-          >
-            {member.role}
-          </p>
-        </div>
+          {member.name}
+        </h3>
+        <p
+          style={{
+            fontSize: "12px",
+            fontWeight: 500,
+            color: "rgba(255,255,255,0.82)",
+            margin: "0 0 2px",
+            letterSpacing: "-0.03em",
+            lineHeight: "1.3",
+          }}
+        >
+          {member.role}
+        </p>
+        <p
+          style={{
+            fontSize: "11px",
+            fontWeight: 500,
+            color: "rgba(255,255,255,0.72)",
+            margin: 0,
+            letterSpacing: "-0.02em",
+            lineHeight: "1.3",
+          }}
+        >
+          {member.company}
+        </p>
       </div>
     </div>
   );

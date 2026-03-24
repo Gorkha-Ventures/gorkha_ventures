@@ -51,7 +51,7 @@ export default function AboutPage() {
             <p className="about-cta-text">Ready to build with us?</p>
             <div className="about-cta-buttons">
               <Link href="/contact" className="btn btn-primary">Get in touch</Link>
-              <Link href="/#services" className="btn btn-secondary">Our services</Link>
+              <Link href="/#services" className="btn btn-secondary">Our Programs</Link>
             </div>
           </section>
         </div>

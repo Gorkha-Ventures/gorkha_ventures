@@ -802,12 +802,12 @@ textarea {
     max-width: 152px;
     object-fit: contain;
     display: block;
-    filter: none;
-    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .partner-logo:hover .partner-logo-image {
-    filter: none;
+    filter: grayscale(100%) brightness(1.08);
 }
 
 /* Contact Page */
@@ -1771,12 +1771,13 @@ a.contact-info-value:hover {
 .service-card-founders-visual {
     width: min(100%, 1040px);
     margin: 0 auto;
-    min-height: 340px;
+    min-height: 380px;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {
     .service-card-visual.service-card-founders-visual {
-        min-height: 420px;
+        min-height: 460px;
         aspect-ratio: 16 / 8;
     }
 }

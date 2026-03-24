@@ -4,37 +4,36 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const navServices = [
+const navPrograms = [
   {
-    title: 'Program for Founders',
+    title: 'For founders',
     subtitle: 'Validation | Product strategy | GTM support',
     href: '/services/offerings-for-founders',
     iconVariant: 'founders',
   },
   {
-    title: 'Offerings For MSME',
-    subtitle: 'Cash Flow Rescue  | Founder Freedom  | Revenue Engine ',
+    title: 'For MSME',
+    subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     href: '/services/msme-offerings',
     iconVariant: 'analytics',
   },
   {
-    title: 'Program for Investors',
+    title: 'For investors',
     subtitle: 'Deal flow | Portfolio support | Co-investment',
     href: '/services/offerings-for-investors',
     iconVariant: 'growth',
   },
   {
-    title: 'Program for Job Seekers',
+    title: 'For job seekers',
     subtitle: 'Portfolio careers | Startup roles',
     href: '/services/offerings-for-job-seekers',
     iconVariant: 'talent',
   },
-  
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [programsOpen, setProgramsOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -58,35 +57,35 @@ export default function Header() {
           <div className="nav-links">
             <div
               className="nav-dropdown"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={() => setProgramsOpen(true)}
+              onMouseLeave={() => setProgramsOpen(false)}
             >
               <button
                 type="button"
                 className="nav-link nav-dropdown-trigger"
-                aria-expanded={servicesOpen}
+                aria-expanded={programsOpen}
                 aria-haspopup="true"
               >
-                Services
+                Program
                 <svg className="nav-dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden>
                   <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <div className={`nav-dropdown-menu ${servicesOpen ? 'is-open' : ''}`} role="menu">
-                {navServices.map((service) => (
+              <div className={`nav-dropdown-menu ${programsOpen ? 'is-open' : ''}`} role="menu">
+                {navPrograms.map((program) => (
                   <Link
-                    key={service.href}
-                    href={service.href}
+                    key={program.href}
+                    href={program.href}
                     className="nav-dropdown-item"
                     role="menuitem"
-                    onClick={() => setServicesOpen(false)}
+                    onClick={() => setProgramsOpen(false)}
                   >
-                    <span className={`nav-dropdown-item-icon nav-dropdown-item-icon-${service.iconVariant}`} aria-hidden>
+                    <span className={`nav-dropdown-item-icon nav-dropdown-item-icon-${program.iconVariant}`} aria-hidden>
                       <span className="nav-dropdown-item-icon-mark" />
                     </span>
                     <span className="nav-dropdown-item-content">
-                      <span className="nav-dropdown-item-title">{service.title}</span>
-                      <span className="nav-dropdown-item-subtitle">{service.subtitle}</span>
+                      <span className="nav-dropdown-item-title">{program.title}</span>
+                      <span className="nav-dropdown-item-subtitle">{program.subtitle}</span>
                     </span>
                   </Link>
                 ))}
