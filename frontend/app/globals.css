@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: var(--font-sans);
 }
 
 body {
@@ -1349,6 +1350,7 @@ a.contact-info-value:hover {
     padding: 56px 0 68px;
     background-color: #0d0d0d;
     min-height: calc(100vh - 72px);
+    font-family: var(--font-sans);
 }
 
 .service-page .container {

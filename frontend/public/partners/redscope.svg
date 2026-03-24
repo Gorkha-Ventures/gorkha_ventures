@@ -2,7 +2,7 @@
   <defs>
     <style>
       .red-scope { fill: #ffffff; }
-      .text-logo { font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 500; fill: #ffffff; }
+      .text-logo { font-family: 'Zalando Sans Variable', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 500; fill: #ffffff; }
     </style>
   </defs>
 

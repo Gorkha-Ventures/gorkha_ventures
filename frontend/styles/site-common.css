@@ -1,15 +1,15 @@
 /**
  * Gorkha Ventures — shared design tokens & typography
  * Imported before globals.css so variables apply site-wide.
- * Do not set font-family on page wrappers in CSS modules; use inheritance from body.
+ * Font faces load here so they ship with global CSS (same graph as --font-sans).
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200..1000&display=swap');
+@import '@fontsource-variable/zalando-sans';
 
 :root {
-  /* Primary stack — use var(--font-sans) or var(--site-font-family) anywhere */
+  /* Zalando Sans Variable — loaded in app/layout.tsx via @fontsource-variable/zalando-sans */
   --font-sans:
-    'Nunito Sans',
+    'Zalando Sans Variable',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
@@ -71,7 +71,7 @@
     transparent 70%
   );
 
-  /* Typography scale (Nunito Sans sitewide) */
+  /* Typography scale (Zalando Sans sitewide) */
   --offering-display: clamp(2.65rem, 9vw, 6.75rem);
   --offering-display-tight: 0.87;
   --offering-h2-section: clamp(1.75rem, 4.5vw, 3.15rem);

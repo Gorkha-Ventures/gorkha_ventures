@@ -4,6 +4,7 @@
   --sky: var(--offering-sky);
   --white: var(--offering-heading-pure);
   --muted: var(--offering-muted-ink);
+  font-family: var(--font-sans);
   color: var(--offering-text-hero);
   background: var(--offering-obsidian);
 }
