@@ -1,10 +1,11 @@
-import Image from 'next/image'
 import fs from 'node:fs'
 import path from 'node:path'
 
+import PartnersCarousel, { type PartnerLogo } from './PartnersCarousel'
+
 export default function Partners() {
   const partnersDir = path.join(process.cwd(), 'public', 'partners')
-  const partners = fs.existsSync(partnersDir)
+  const partners: PartnerLogo[] = fs.existsSync(partnersDir)
     ? fs
         .readdirSync(partnersDir)
         .filter((fileName) => /\.(png|jpe?g|webp|svg)$/i.test(fileName))
@@ -25,22 +26,12 @@ export default function Partners() {
         })
     : []
 
+  if (partners.length === 0) return null
+
   return (
     <section className="partners-section">
       <div className="container">
-        <div className="partners-logos">
-          {partners.map((partner, index) => (
-            <div key={index} className={`partner-logo partner-logo-${partner.slug}`}>
-              <Image
-                src={partner.logo}
-                alt={partner.name}
-                width={120}
-                height={60}
-                className="partner-logo-image"
-              />
-            </div>
-          ))}
-        </div>
+        <PartnersCarousel partners={partners} />
       </div>
     </section>
   )

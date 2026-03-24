@@ -190,38 +190,21 @@ const members: Member[] = [
 const CARDS_PER_VIEW = 6;
 const AUTO_SLIDE_MS = 2800;
 const SLIDE_DURATION_MS = 520;
-const CARD_WIDTH = 200;
+const CARD_WIDTH = 220;
 const CARD_GAP = 20;
 
 function Card({ member }: { member: Member }) {
   return (
-    <div
-      style={{
-        flexShrink: 0,
-        width: "200px",
-        borderRadius: "20px",
-        padding: "10px",
-        background: "rgba(255,255,255,0.04)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.22)",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          height: "210px",
-          borderRadius: "14px",
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
+    <article className="our-network-card">
+      <div className="our-network-card-image">
         {member.image ? (
           <Image
             src={member.image}
             alt={member.name}
             fill
+            sizes="220px"
             style={{ objectFit: "cover" }}
-            className="grayscale"
+            className="our-network-card-photo"
           />
         ) : (
           <div
@@ -241,51 +224,12 @@ function Card({ member }: { member: Member }) {
           </div>
         )}
       </div>
-      <div
-        style={{
-          marginTop: "10px",
-          padding: "0 2px 2px",
-          textAlign: "left",
-        }}
-      >
-        <h3
-          style={{
-            fontSize: "16px",
-            fontWeight: 500,
-            color: "#ffffff",
-            margin: "0 0 3px",
-            letterSpacing: "-0.04em",
-            lineHeight: "1.35",
-          }}
-        >
-          {member.name}
-        </h3>
-        <p
-          style={{
-            fontSize: "12px",
-            fontWeight: 500,
-            color: "rgba(255,255,255,0.82)",
-            margin: "0 0 2px",
-            letterSpacing: "-0.03em",
-            lineHeight: "1.3",
-          }}
-        >
-          {member.role}
-        </p>
-        <p
-          style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            color: "rgba(255,255,255,0.72)",
-            margin: 0,
-            letterSpacing: "-0.02em",
-            lineHeight: "1.3",
-          }}
-        >
-          {member.company}
-        </p>
+      <div className="our-network-card-footer">
+        <h3 className="our-network-card-name">{member.name}</h3>
+        <p className="our-network-card-role">{member.role}</p>
+        <p className="our-network-card-company">{member.company}</p>
       </div>
-    </div>
+    </article>
   );
 }
 

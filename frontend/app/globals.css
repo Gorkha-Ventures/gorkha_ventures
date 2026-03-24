@@ -810,13 +810,127 @@ textarea {
     filter: grayscale(100%) brightness(1.08);
 }
 
+.partners-carousel-viewport {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 52px 44px;
+}
+
+.partners-carousel-viewport .partner-logo {
+    min-width: 0;
+    height: 88px;
+    padding: 14px 18px;
+}
+
+.partners-carousel-viewport .partner-logo-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 72px;
+    object-fit: contain;
+}
+
+.partners-carousel-viewport[data-carousel-compact='true'] {
+    padding: 40px 18px 52px;
+}
+
+.partners-carousel-viewport[data-carousel-compact='true'] .partner-logo {
+    height: 72px;
+    padding: 10px 12px;
+}
+
+.partners-carousel-viewport[data-carousel-compact='true'] .partner-logo-image {
+    max-height: 56px;
+}
+
+/* Our Network — profile cards (fixed size, image + footer) */
+.our-network-card {
+    width: 220px;
+    height: 400px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    overflow: visible;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    background: #0d0d0d;
+    box-sizing: border-box;
+}
+
+.our-network-card-image {
+    position: relative;
+    width: 100%;
+    flex: 0 0 286px;
+    height: 286px;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    background: #2a2226;
+}
+
+.our-network-card-photo,
+.our-network-card-image img {
+    filter: grayscale(100%);
+}
+
+.our-network-card-footer {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 12px;
+    border-radius: 0 0 14px 14px;
+    text-align: center;
+    background: #000000;
+}
+
+.our-network-card-name {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.our-network-card-role {
+    margin: 0 0 2px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.35;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.our-network-card-company {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.35;
+    max-width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
 /* Contact Page */
 .contact-page {
     padding: 64px 0 80px;
-    background:
-        radial-gradient(circle at 12% 12%, rgba(115, 216, 224, 0.08), transparent 42%),
-        radial-gradient(circle at 88% 84%, rgba(255, 139, 61, 0.08), transparent 40%),
-        #0d0d0d;
+    background-color: #0d0d0d;
     min-height: calc(100vh - 72px);
 }
 
@@ -3371,6 +3485,19 @@ a.contact-info-value:hover {
 
     .partners-logos {
         gap: 40px;
+    }
+
+    .partners-carousel-viewport {
+        padding: 44px 16px 56px;
+    }
+
+    .partners-carousel-viewport .partner-logo {
+        height: 76px;
+        padding: 12px 14px;
+    }
+
+    .partners-carousel-viewport .partner-logo-image {
+        max-height: 60px;
     }
 
     .partner-logo {
