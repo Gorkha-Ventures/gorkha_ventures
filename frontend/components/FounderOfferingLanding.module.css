@@ -6,6 +6,7 @@
   --w60: var(--offering-muted);
   --w35: var(--offering-muted-faint);
   --border: var(--offering-border);
+  font-family: var(--font-sans);
   color: var(--white);
   background: var(--obsidian);
 }

@@ -22,10 +22,10 @@ export default function Footer() {
             <div className="footer-links-group">
               <p className="footer-links-title">Offerings</p>
               <nav className="footer-links-list" aria-label="Offerings">
-                <Link href="/services/offerings-for-founders" className="footer-link">Founders</Link>
-                <Link href="/services/msme-offerings" className="footer-link">MSME</Link>
-                <Link href="/services/offerings-for-investors" className="footer-link">Investors</Link>
-                <Link href="/services/offerings-for-job-seekers" className="footer-link">Job Seekers</Link>
+                <Link href="/services/offerings-for-founders" className="footer-link">For Founders</Link>
+                <Link href="/services/msme-offerings" className="footer-link">For MSME</Link>
+                <Link href="/services/offerings-for-investors" className="footer-link">For Investors</Link>
+                <Link href="/services/offerings-for-job-seekers" className="footer-link">For Job Seekers</Link>
               </nav>
             </div>
 
@@ -78,8 +78,6 @@ export default function Footer() {
             </a>
           </div>  
         </div>
-
-        <p className="footer-copyright">© {currentYear} Gorkha Ventures</p>
       </div>
     </footer>
   )

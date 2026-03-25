@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { Suspense, useEffect, useMemo, useState } from 'react'
 import { apiFetch, logoutApi } from '@/lib/api'
 import { clearTokens } from '@/lib/auth'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -22,6 +22,14 @@ type ListResponse = {
 }
 
 export default function DashboardPage() {
+  return (
+    <Suspense fallback={<div className="empty">Loading...</div>}>
+      <DashboardContent />
+    </Suspense>
+  )
+}
+
+function DashboardContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [items, setItems] = useState<Submission[]>([])
