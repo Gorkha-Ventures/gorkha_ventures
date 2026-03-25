@@ -187,22 +187,25 @@ const members: Member[] = [
   },
 ];
 
-const CARDS_PER_VIEW = 6;
 const AUTO_SLIDE_MS = 2800;
 const SLIDE_DURATION_MS = 520;
-const CARD_WIDTH = 220;
-const CARD_GAP = 20;
+const DESKTOP_CARDS_PER_VIEW = 6;
+const MOBILE_CARDS_PER_VIEW = 2;
+const DESKTOP_CARD_WIDTH = 220;
+const MOBILE_CARD_WIDTH = 160;
+const DESKTOP_CARD_GAP = 20;
+const MOBILE_CARD_GAP = 17;
 
-function Card({ member }: { member: Member }) {
+function Card({ member, cardWidth }: { member: Member; cardWidth: number }) {
   return (
-    <article className="our-network-card">
+    <article className="our-network-card" style={{ width: `${cardWidth}px` }}>
       <div className="our-network-card-image">
         {member.image ? (
           <Image
             src={member.image}
             alt={member.name}
             fill
-            sizes="220px"
+            sizes={`${cardWidth}px`}
             style={{ objectFit: "cover" }}
             className="our-network-card-photo"
           />
@@ -236,16 +239,29 @@ function Card({ member }: { member: Member }) {
 export default function OurNetwork() {
   const [startIndex, setStartIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (members.length <= CARDS_PER_VIEW || isAnimating) return;
+    const mq = window.matchMedia("(max-width: 768px)");
+    const apply = () => setIsMobile(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  const cardsPerView = isMobile ? MOBILE_CARDS_PER_VIEW : DESKTOP_CARDS_PER_VIEW;
+  const cardWidth = isMobile ? MOBILE_CARD_WIDTH : DESKTOP_CARD_WIDTH;
+  const cardGap = isMobile ? MOBILE_CARD_GAP : DESKTOP_CARD_GAP;
+
+  useEffect(() => {
+    if (members.length <= cardsPerView || isAnimating) return;
 
     const timer = setTimeout(() => {
       setIsAnimating(true);
     }, AUTO_SLIDE_MS);
 
     return () => clearTimeout(timer);
-  }, [isAnimating]);
+  }, [isAnimating, cardsPerView]);
 
   useEffect(() => {
     if (!isAnimating) return;
@@ -259,7 +275,7 @@ export default function OurNetwork() {
   }, [isAnimating]);
 
   const visibleMembers = useMemo(() => {
-    const currentWindow = Array.from({ length: CARDS_PER_VIEW }, (_, offset) => {
+    const currentWindow = Array.from({ length: cardsPerView }, (_, offset) => {
       return members[(startIndex + offset) % members.length];
     });
 
@@ -267,9 +283,9 @@ export default function OurNetwork() {
       return currentWindow;
     }
 
-    const nextIncoming = members[(startIndex + CARDS_PER_VIEW) % members.length];
+    const nextIncoming = members[(startIndex + cardsPerView) % members.length];
     return [...currentWindow, nextIncoming];
-  }, [startIndex, isAnimating]);
+  }, [startIndex, isAnimating, cardsPerView]);
 
   return (
     <section
@@ -303,7 +319,7 @@ export default function OurNetwork() {
 
       <div
         style={{
-          width: `${CARDS_PER_VIEW * CARD_WIDTH + (CARDS_PER_VIEW - 1) * CARD_GAP}px`,
+          width: `${cardsPerView * cardWidth + (cardsPerView - 1) * cardGap}px`,
           maxWidth: "100%",
           margin: "0 auto",
           overflow: "hidden",
@@ -312,17 +328,17 @@ export default function OurNetwork() {
         <div
           style={{
             display: "flex",
-            gap: `${CARD_GAP}px`,
+            gap: `${cardGap}px`,
             alignItems: "stretch",
-            transform: isAnimating ? `translateX(-${CARD_WIDTH + CARD_GAP}px)` : "translateX(0)",
+            transform: isAnimating ? `translateX(-${cardWidth + cardGap}px)` : "translateX(0)",
             transition: isAnimating
               ? `transform ${SLIDE_DURATION_MS}ms cubic-bezier(0.22, 0.61, 0.36, 1)`
               : "none",
           }}
         >
           {visibleMembers.map((member, index) => (
-            <div key={`${member.name}-${startIndex}-${index}`} style={{ flexShrink: 0 }}>
-              <Card member={member} />
+            <div key={`${member.name}-${startIndex}-${index}`} style={{ flexShrink: 0, width: `${cardWidth}px` }}>
+              <Card member={member} cardWidth={cardWidth} />
             </div>
           ))}
         </div>

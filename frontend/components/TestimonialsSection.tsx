@@ -85,9 +85,9 @@ export default function TestimonialsSection() {
     }
     
     if (isMobile) {
-      // Mobile: each card is (100% - 80px) + 20px gap
-      const cardWidth = window.innerWidth - 80
-      const gap = 20
+      // Mobile: match CSS (card = min(520px, 100vw - 64px), gap 16px)
+      const cardWidth = Math.min(520, window.innerWidth - 64)
+      const gap = 16
       return `translateX(calc(-${currentIndex * (cardWidth + gap)}px + 50% - ${cardWidth / 2}px))`
     }
     // Desktop: Fixed card width (480px on large, 400px on tablet) + 32px gap
@@ -110,8 +110,8 @@ export default function TestimonialsSection() {
 
   return (
     <section className="testimonials-section">
-      <div className="container" style={{ padding: 0 }}>
-        <h2 className="testimonials-title" style={{ padding: '0 24px' }}>
+      <div className="container" style={isMobile ? undefined : { padding: 0 }}>
+        <h2 className="testimonials-title" style={isMobile ? undefined : { padding: '0 24px' }}>
           Trusted by founders building the next generation of companies
         </h2>
         <div className="testimonials-carousel">

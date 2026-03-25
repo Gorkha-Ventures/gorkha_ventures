@@ -132,6 +132,163 @@ textarea {
     align-items: center;
 }
 
+/* Mobile navbar (logo + hamburger) */
+.nav-mobile-toggle,
+.nav-mobile-sheet {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(26, 26, 26, 0.72);
+        color: #f5f5f5;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-mobile-toggle-lines {
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 0 auto;
+        background: currentColor;
+        border-radius: 999px;
+        position: relative;
+    }
+
+    .nav-mobile-toggle-lines::before,
+    .nav-mobile-toggle-lines::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 999px;
+    }
+
+    .nav-mobile-toggle-lines::before { top: -6px; }
+    .nav-mobile-toggle-lines::after { top: 6px; }
+
+    /* Turn hamburger into X when open */
+    .nav-mobile-toggle.is-open .nav-mobile-toggle-lines {
+        background: transparent;
+    }
+
+    .nav-mobile-toggle.is-open .nav-mobile-toggle-lines::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-mobile-toggle.is-open .nav-mobile-toggle-lines::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    .nav-mobile-sheet {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.18s ease, visibility 0.18s ease;
+        z-index: 120;
+    }
+
+    .nav-mobile-sheet.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-mobile-panel {
+        position: absolute;
+        top: 76px;
+        left: 12px;
+        right: 12px;
+        border-radius: 16px;
+        background: rgba(20, 20, 22, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        padding: 10px;
+    }
+
+    .nav-mobile-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-mobile-item-trigger {
+        cursor: pointer;
+    }
+
+    .nav-mobile-chevron {
+        opacity: 0.8;
+        transition: transform 0.2s ease;
+    }
+
+    .nav-mobile-chevron.is-open {
+        transform: rotate(180deg);
+    }
+
+    .nav-mobile-submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        margin: 8px 0;
+    }
+
+    .nav-mobile-submenu.is-open {
+        max-height: 520px;
+    }
+
+    .nav-mobile-subitem {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 8px;
+    }
+
+    .nav-mobile-subitem-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .nav-mobile-subitem-subtitle {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.35;
+    }
+}
+
 .nav-lang {
     font-size: 13px;
     font-weight: 500;
@@ -329,23 +486,19 @@ textarea {
     text-transform: none;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
     .header-inner {
         justify-content: space-between;
         height: 84px;
         gap: 12px;
     }
 
-    .logo {
+    .nav-actions {
         display: none;
     }
 
     .nav {
-        flex: 0;
-    }
-
-    .nav-actions {
-        position: static;
+        display: none;
     }
 
     .nav-dropdown-menu {
@@ -395,14 +548,52 @@ textarea {
 
 .hero-section .container {
     max-width: 1366px;
+    /* Keep desktop as-is; mobile override below */
     padding-left: 4px;
     padding-right: 4px;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
     .hero-section .container {
-        padding-left: 4px;
-        padding-right: 4px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* Hero mobile layout only */
+@media (max-width: 768px) {
+    .hero-content {
+        gap: 28px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-left {
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+    }
+
+    .hero-description {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .hero-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonial-container {
+        width: min(520px, 100%);
+        margin: 0 auto;
     }
 }
 
@@ -871,6 +1062,18 @@ textarea {
     border-radius: 14px 14px 0 0;
     overflow: hidden;
     background: #2a2226;
+}
+
+/* Our Network mobile: smaller image */
+@media (max-width: 768px) {
+    .our-network-card {
+        height: 372px;
+    }
+
+    .our-network-card-image {
+        flex: 0 0 240px;
+        height: 240px;
+    }
 }
 
 .our-network-card-photo,
@@ -2549,13 +2752,30 @@ a.contact-info-value:hover {
 
 /* Mobile: 1 card per slide */
 @media (max-width: 767px) {
-    .testimonial-card {
-        min-width: calc(100% - 80px);
-        margin: 0 40px;
+    .testimonials-section {
+        overflow-x: clip;
     }
-    
+
+    .testimonials-carousel {
+        overflow-x: clip;
+    }
+
+    .testimonials-carousel-wrapper {
+        overflow: hidden;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
     .testimonials-track {
-        gap: 20px;
+        gap: 16px;
+        padding: 0;
+    }
+
+    .testimonial-card {
+        /* Keep inside container + wrapper paddings on small screens */
+        min-width: min(520px, calc(100vw - 64px));
+        width: min(520px, calc(100vw - 64px));
+        margin: 0;
     }
 }
 
@@ -3116,16 +3336,40 @@ a.contact-info-value:hover {
     .footer-container {
         flex-direction: column;
         min-height: auto;
+        /* Mountain is absolutely positioned; content stacks in normal flow on top */
+        padding-bottom: 0;
     }
 
+    /* Mountain sits behind brand + social (and lower footer area), not as a separate row above */
     .footer-mountain-left {
-        position: relative;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
-        height: 110px;
+        height: min(200px, 42vw);
+        max-height: 220px;
+        z-index: 1;
+        pointer-events: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .footer-mountain-left img {
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom center;
+        opacity: 0.55;
     }
 
     .footer-content-right {
-        padding: 18px 14px 20px;
+        position: relative;
+        z-index: 2;
+        padding: 18px 14px 28px;
         align-items: center;
         text-align: center;
         width: 100%;
@@ -3441,14 +3685,28 @@ a.contact-info-value:hover {
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
         width: 100%;
-        max-width: 300px;
+        max-width: none;
+        gap: 10px;
     }
 
     .btn {
         width: 100%;
         padding: 14px 32px;
+    }
+
+    .hero-buttons .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        max-width: none;
+        padding: 14px 14px;
+        font-size: 15px;
+        text-align: center;
     }
 
     .hero-left {
