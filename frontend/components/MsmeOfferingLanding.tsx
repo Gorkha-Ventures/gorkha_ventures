@@ -668,15 +668,15 @@ export default function MsmeOfferingLanding() {
                 first.
               </p>
 
-              <div className={styles.touchMeta}>
+              {/* <div className={styles.touchMeta}>
                 <p><span>Website</span>gorkhaventures.in</p>
                 <p><span>Email</span>hello@gorkhaventures.in</p>
                 <p><span>Based in</span>Dehradun, Uttarakhand</p>
-              </div>
+              </div> */}
             </div>
 
             <div className={styles.touchActions}>
-              <a href="#contact" className={styles.touchBtnGhost}>WhatsApp us -&gt;</a>
+              {/* <a href="#contact" className={styles.touchBtnGhost}>WhatsApp us -&gt;</a> */}
               <button
                 type="button"
                 className={styles.touchBtnFill}
