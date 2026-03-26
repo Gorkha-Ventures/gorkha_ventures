@@ -87,9 +87,9 @@ const members: Member[] = [
     initials: "RN" 
   },
   {
-    name: "Mudit Goyal",
+    name: "Mudit Goel",
     role: "Head of AI Product",
-    company: "McFee",
+    company: "CommerceIQ (Softbank)",
     category: "mentor",
     image: "/mentors/mudit.png",
     bg: "#7a4a8c", 

@@ -12,10 +12,8 @@ export type PartnerLogo = {
 const AUTO_SLIDE_MS = 2800
 const SLIDE_DURATION_MS = 520
 
-// Keep consistent visual separation between all logos.
-// Some marks are optically wider; slightly larger gaps prevents “tight” pairs.
-const LAYOUT_WIDE = { logosPerView: 4, slotWidth: 250, slotGap: 48 } as const
-const LAYOUT_NARROW = { logosPerView: 3, slotWidth: 130, slotGap: 24 } as const
+const LAYOUT_WIDE = { logosPerView: 4, slotWidth: 216, slotGap: 36 } as const
+const LAYOUT_NARROW = { logosPerView: 3, slotWidth: 108, slotGap: 20 } as const
 
 export default function PartnersCarousel({ partners }: { partners: PartnerLogo[] }) {
   const [startIndex, setStartIndex] = useState(0)
