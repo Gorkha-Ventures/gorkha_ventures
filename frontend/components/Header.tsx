@@ -34,6 +34,8 @@ const navPrograms = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [programsOpen, setProgramsOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -91,18 +93,77 @@ export default function Header() {
                 ))}
               </div>
             </div>
-            <a
-              href="https://news.gorkhaventures.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link nav-resource-button"
-            >
+            <Link href="/resources" className="nav-link nav-resource-button">
               Resources
-            </a>
+            </Link>
           </div>
         </nav>
         <div className="nav-actions">
           <Link href="/contact" className="nav-cta">Apply</Link>
+        </div>
+
+        {/* Mobile: logo + hamburger (menu contains Program dropdown + Resources) */}
+        <button
+          type="button"
+          className={`nav-mobile-toggle ${mobileOpen ? 'is-open' : ''}`}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          onClick={() => {
+            setMobileOpen((v) => !v)
+            if (mobileOpen) setMobileProgramsOpen(false)
+          }}
+        >
+          <span className="nav-mobile-toggle-lines" aria-hidden />
+        </button>
+      </div>
+
+      <div
+        className={`nav-mobile-sheet ${mobileOpen ? 'is-open' : ''}`}
+        role="dialog"
+        aria-label="Mobile menu"
+        aria-modal="true"
+        onClick={() => setMobileOpen(false)}
+      >
+        <div className="nav-mobile-panel" onClick={(e) => e.stopPropagation()}>
+          <button
+            type="button"
+            className="nav-mobile-item nav-mobile-item-trigger"
+            aria-expanded={mobileProgramsOpen}
+            onClick={() => setMobileProgramsOpen((v) => !v)}
+          >
+            <span>Program</span>
+            <span className={`nav-mobile-chevron ${mobileProgramsOpen ? 'is-open' : ''}`} aria-hidden>
+              ▾
+            </span>
+          </button>
+
+          <div className={`nav-mobile-submenu ${mobileProgramsOpen ? 'is-open' : ''}`}>
+            {navPrograms.map((program) => (
+              <Link
+                key={program.href}
+                href={program.href}
+                className="nav-mobile-subitem"
+                onClick={() => {
+                  setMobileOpen(false)
+                  setMobileProgramsOpen(false)
+                }}
+              >
+                <span className="nav-mobile-subitem-title">{program.title}</span>
+                <span className="nav-mobile-subitem-subtitle">{program.subtitle}</span>
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/resources"
+            className="nav-mobile-item"
+            onClick={() => {
+              setMobileOpen(false)
+              setMobileProgramsOpen(false)
+            }}
+          >
+            Resources
+          </Link>
         </div>
       </div>
     </header>
