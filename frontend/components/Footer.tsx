@@ -35,7 +35,6 @@ export default function Footer() {
                 <Link href="/about" className="footer-link">About Us</Link>
                 <a href="#" className="footer-link">Careers</a>
                 <a href="#" className="footer-link">Resources</a>
-                <a href="#" className="footer-link">People</a>
               </nav>
             </div>
 
