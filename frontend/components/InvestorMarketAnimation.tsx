@@ -106,11 +106,11 @@ export default function InvestorMarketAnimation() {
           >
             <defs>
               <pattern id={dotsId} width="6" height="6" patternUnits="userSpaceOnUse">
-                <circle cx="1" cy="1" r="0.45" fill="rgba(115, 216, 224, 0.11)" />
+                <circle cx="1" cy="1" r="0.45" fill="rgba(252, 163, 17, 0.11)" />
               </pattern>
               <linearGradient id={gradLineId} x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#7ed4df" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#7ed4df" stopOpacity="1" />
+                <stop offset="0%" stopColor="#fca311" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#fca311" stopOpacity="1" />
               </linearGradient>
             </defs>
             <rect
@@ -129,7 +129,7 @@ export default function InvestorMarketAnimation() {
                 x2={W - PAD.r}
                 y1={yFor(g)}
                 y2={yFor(g)}
-                stroke="rgba(115, 216, 224, 0.07)"
+                stroke="rgba(252, 163, 17, 0.07)"
                 strokeWidth="0.5"
                 vectorEffect="non-scaling-stroke"
               />
@@ -144,8 +144,8 @@ export default function InvestorMarketAnimation() {
               const top = Math.min(yO, yC)
               const bot = Math.max(yO, yC)
               const up = c.c >= c.o
-              const fill = up ? '#5eead4' : '#f87171'
-              const stroke = up ? '#7ed4df' : '#fca5a5'
+              const fill = up ? '#ffb84d' : '#f87171'
+              const stroke = up ? '#fca311' : '#fca5a5'
 
               return (
                 <g key={i}>
@@ -203,7 +203,7 @@ export default function InvestorMarketAnimation() {
                   height: `${Math.round(v * 100)}%`,
                   background:
                     CANDLES[i].c >= CANDLES[i].o
-                      ? 'linear-gradient(180deg, rgba(94,234,212,0.45) 0%, rgba(94,234,212,0.1) 100%)'
+                      ? 'linear-gradient(180deg, rgba(252,163,17,0.45) 0%, rgba(252,163,17,0.1) 100%)'
                       : 'linear-gradient(180deg, rgba(248,113,113,0.4) 0%, rgba(248,113,113,0.08) 100%)',
                 }}
                 animate={{ opacity: [0.7, 1, 0.8] }}
@@ -277,7 +277,7 @@ export default function InvestorMarketAnimation() {
                 className={`${styles.obBar} ${styles.obBarBid}`}
                 style={{
                   width: `${36 + i * 16}%`,
-                  background: '#5eead4',
+                  background: '#ffb84d',
                 }}
               />
               <span className={styles.obCell}>{row.p}</span>
@@ -296,7 +296,7 @@ export default function InvestorMarketAnimation() {
                 <path
                   d={p.d}
                   fill="none"
-                  stroke="#7ed4df"
+                  stroke="#fca311"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -319,11 +319,11 @@ export default function InvestorMarketAnimation() {
               Follow-on
             </span>
             <span className={styles.capLeg}>
-              <span className={styles.capDot} style={{ background: '#5eead4' }} />
+              <span className={styles.capDot} style={{ background: '#ffb84d' }} />
               New deals
             </span>
             <span className={styles.capLeg}>
-              <span className={styles.capDot} style={{ background: '#7ed4df' }} />
+              <span className={styles.capDot} style={{ background: '#fca311' }} />
               Mgmt fees
             </span>
           </div>

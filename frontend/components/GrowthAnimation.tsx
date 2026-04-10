@@ -79,11 +79,11 @@ function Milestone({ icon, label, active, left, top, isFinal }: MilestoneProps) 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: isFinal ? '#22d3ee' : 'rgba(13, 13, 13, 0.84)',
-          border: '1px solid rgba(115, 216, 224, 0.35)',
+          background: isFinal ? '#fca311' : 'rgba(13, 13, 13, 0.84)',
+          border: '1px solid rgba(252, 163, 17, 0.35)',
           boxShadow: isFinal
-            ? '0 0 28px rgba(34, 211, 238, 0.55)'
-            : '0 0 14px rgba(34, 211, 238, 0.25)',
+            ? '0 0 28px rgba(252, 163, 17, 0.55)'
+            : '0 0 14px rgba(252, 163, 17, 0.25)',
         }}
       >
         {icon}
@@ -100,7 +100,7 @@ function Milestone({ icon, label, active, left, top, isFinal }: MilestoneProps) 
           borderRadius: 999,
           border: '1px solid rgba(255,255,255,0.12)',
           background: 'rgba(10, 10, 10, 0.6)',
-          color: '#bfeff2',
+          color: '#ffe6bf',
           whiteSpace: 'nowrap',
         }}
       >
@@ -148,7 +148,7 @@ export default function GrowthAnimation() {
           position: 'absolute',
           inset: 0,
           opacity: 0.14,
-          backgroundImage: 'radial-gradient(circle at center, #0ea5e9 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle at center, #fca311 1px, transparent 1px)',
           backgroundSize: '34px 34px',
         }}
       />
@@ -215,9 +215,9 @@ export default function GrowthAnimation() {
       >
         <defs>
           <linearGradient id="gv-line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#22d3ee" stopOpacity="0" />
-            <stop offset="20%" stopColor="#22d3ee" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#0ea5e9" stopOpacity="1" />
+            <stop offset="0%" stopColor="#fca311" stopOpacity="0" />
+            <stop offset="20%" stopColor="#fca311" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#e8940f" stopOpacity="1" />
           </linearGradient>
           <filter id="gv-glow">
             <feGaussianBlur stdDeviation="4" result="coloredBlur" />
@@ -267,21 +267,21 @@ export default function GrowthAnimation() {
 
       <div style={{ position: 'absolute', inset: 0, zIndex: 5, pointerEvents: 'none' }}>
         <Milestone
-          icon={<Lightbulb size={16} color="#bff7fb" />}
+          icon={<Lightbulb size={16} color="#ffb84d" />}
           label="Idea"
           active={activeMilestone === 1}
           left="20%"
           top="72%"
         />
         <Milestone
-          icon={<Box size={16} color="#bff7fb" />}
+          icon={<Box size={16} color="#ffb84d" />}
           label="Product"
           active={activeMilestone === 2}
           left="35%"
           top="72%"
         />
         <Milestone
-          icon={<Megaphone size={16} color="#bff7fb" />}
+          icon={<Megaphone size={16} color="#ffb84d" />}
           label="GTM"
           active={activeMilestone === 3}
           left="65%"

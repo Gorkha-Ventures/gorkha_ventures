@@ -45,10 +45,10 @@ const KPI_CARDS = [
 ] as const
 
 const FUNNEL = [
-  { label: 'Leads', color: '#7ed4df', widthPct: 100 },
-  { label: 'Qualified', color: '#5ab0bd', widthPct: 72 },
-  { label: 'Won', color: '#3d8a96', widthPct: 48 },
-  { label: 'Repeat', color: '#2c6570', widthPct: 31 },
+  { label: 'Leads', color: '#fca311', widthPct: 100 },
+  { label: 'Qualified', color: '#e8940f', widthPct: 72 },
+  { label: 'Won', color: '#c77d0a', widthPct: 48 },
+  { label: 'Repeat', color: '#8a5a08', widthPct: 31 },
 ] as const
 
 const LINE_PATH =
@@ -140,8 +140,8 @@ export default function MsmeDashboardAnimation() {
             >
               <defs>
                 <linearGradient id="msme-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#7ed4df" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#7ed4df" stopOpacity="1" />
+                  <stop offset="0%" stopColor="#fca311" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#fca311" stopOpacity="1" />
                 </linearGradient>
               </defs>
               <motion.path
@@ -210,7 +210,7 @@ export default function MsmeDashboardAnimation() {
               <tbody>
                 <tr>
                   <td>Dehradun Foods</td>
-                  <td style={{ color: '#5eead4' }}>Shipped</td>
+                  <td style={{ color: '#ffb84d' }}>Shipped</td>
                   <td>UK-01</td>
                 </tr>
                 <tr>
@@ -238,7 +238,7 @@ export default function MsmeDashboardAnimation() {
                   cy="20"
                   r="15"
                   fill="none"
-                  stroke="rgba(115,216,224,0.12)"
+                  stroke="rgba(252,163,17,0.12)"
                   strokeWidth="6"
                 />
                 {/* r=15 → C ≈ 94.25 */}
@@ -247,7 +247,7 @@ export default function MsmeDashboardAnimation() {
                   cy="20"
                   r="15"
                   fill="none"
-                  stroke="#7ed4df"
+                  stroke="#fca311"
                   strokeWidth="6"
                   strokeDasharray="40 55"
                   strokeLinecap="round"
@@ -258,7 +258,7 @@ export default function MsmeDashboardAnimation() {
                   cy="20"
                   r="15"
                   fill="none"
-                  stroke="#5ab0bd"
+                  stroke="#c77d0a"
                   strokeWidth="6"
                   strokeDasharray="33 62"
                   strokeDashoffset="-40"
@@ -280,11 +280,11 @@ export default function MsmeDashboardAnimation() {
               </motion.svg>
               <div className={styles.donutLegend}>
                 <div className={styles.legendRow}>
-                  <span className={styles.legendSwatch} style={{ background: '#7ed4df' }} />
+                  <span className={styles.legendSwatch} style={{ background: '#fca311' }} />
                   <span>Retail 42%</span>
                 </div>
                 <div className={styles.legendRow}>
-                  <span className={styles.legendSwatch} style={{ background: '#5ab0bd' }} />
+                  <span className={styles.legendSwatch} style={{ background: '#c77d0a' }} />
                   <span>Online 35%</span>
                 </div>
                 <div className={styles.legendRow}>

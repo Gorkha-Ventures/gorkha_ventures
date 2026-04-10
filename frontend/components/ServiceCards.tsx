@@ -21,7 +21,7 @@ const services: Service[] = [
     subtitle: 'Validation | Product strategy | GTM support',
     description:
       'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
-    color: '#73d8e0',
+    color: '#fca311',
     icon: '🚀',
     layout: 'founders',
     href: '/services/offerings-for-founders',
@@ -32,7 +32,7 @@ const services: Service[] = [
     subtitle: 'Pre-seed incubation | Seed funding | Mentorship',
     description:
       'We help micro, small and medium enterprises grow from first customer to Series A with hands-on support, capital, and operator-led guidance.',
-    color: '#73d8e0',
+    color: '#fca311',
     icon: '🏢',
     layout: 'msme',
     href: '/services/msme-offerings',
@@ -42,7 +42,7 @@ const services: Service[] = [
     subtitle: 'Deal flow | Portfolio support | Co-investment',
     description:
       'Access curated early-stage opportunities, portfolio company support, and co-investment options alongside Gorkha Ventures.',
-    color: '#73d8e0',
+    color: '#fca311',
     icon: '📈',
     layout: 'investors',
     href: '/services/offerings-for-investors',

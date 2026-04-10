@@ -663,7 +663,7 @@
 
 .msmeThesisPull {
   margin-top: 1.6rem;
-  border-left: 3px solid #6fd3de;
+  border-left: 3px solid #fca311;
   padding: 0.7rem 0 0.7rem 1rem;
   color: #eef7fb;
   text-transform: uppercase;
@@ -705,14 +705,14 @@
   top: 0.35rem;
   width: 8px;
   height: 8px;
-  background: #74d5e0;
+  background: #fca311;
 }
 
 .msmeThesisStage {
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.88);
+  color: rgba(252, 163, 17, 0.88);
   margin-bottom: 0.35rem;
   font-weight: 600;
 }
@@ -736,8 +736,8 @@
 
 .msmeThesisItem span {
   display: inline-block;
-  border: 1px solid rgba(115, 216, 224, 0.35);
-  background: rgba(115, 216, 224, 0.1);
+  border: 1px solid rgba(252, 163, 17, 0.35);
+  background: rgba(252, 163, 17, 0.1);
   color: #7fdbe5;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1121,8 +1121,8 @@
 .whyIcon {
   width: 28px;
   height: 28px;
-  border: 1px solid rgba(115, 216, 224, 0.55);
-  color: rgba(115, 216, 224, 0.88);
+  border: 1px solid rgba(252, 163, 17, 0.55);
+  color: rgba(252, 163, 17, 0.88);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1161,8 +1161,8 @@
   width: 17px;
   height: 17px;
   border-radius: 999px;
-  border: 1px solid rgba(115, 216, 224, 0.8);
-  color: rgba(115, 216, 224, 0.88);
+  border: 1px solid rgba(252, 163, 17, 0.8);
+  color: rgba(252, 163, 17, 0.88);
   display: inline-flex;
   align-items: center;
   justify-content: center;

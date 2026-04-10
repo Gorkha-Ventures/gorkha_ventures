@@ -224,12 +224,12 @@
 .problemIcon {
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(115, 216, 224, 0.2);
-  background: rgba(115, 216, 224, 0.06);
+  border: 1px solid rgba(252, 163, 17, 0.2);
+  background: rgba(252, 163, 17, 0.06);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: rgba(115, 216, 224, 0.8);
+  color: rgba(252, 163, 17, 0.8);
   font-size: 14px;
   margin-bottom: 1rem;
 }
@@ -255,7 +255,7 @@
   font-size: 0.74rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.6);
+  color: rgba(252, 163, 17, 0.6);
 }
 
 .grid2 {
@@ -368,7 +368,7 @@
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.8);
+  color: rgba(252, 163, 17, 0.8);
   margin-bottom: 0.36rem;
   font-weight: 600;
 }
@@ -391,8 +391,8 @@
 .thesisBadge {
   display: inline-block;
   padding: 0.38rem 0.72rem;
-  border: 1px solid rgba(115, 216, 224, 0.28);
-  background: rgba(115, 216, 224, 0.1);
+  border: 1px solid rgba(252, 163, 17, 0.28);
+  background: rgba(252, 163, 17, 0.1);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.7rem;
@@ -432,7 +432,7 @@
   position: absolute;
   top: 0.8rem;
   right: 0.95rem;
-  color: rgba(115, 216, 224, 0.08);
+  color: rgba(252, 163, 17, 0.08);
   font-size: 3.2rem;
   line-height: 1;
   font-weight: 800;
@@ -469,7 +469,7 @@
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.8);
+  color: rgba(252, 163, 17, 0.8);
   margin-bottom: 0.45rem;
   font-weight: 600;
 }
@@ -551,14 +551,14 @@
 }
 
 .compareHighlightHead {
-  color: rgba(115, 216, 224, 0.85) !important;
+  color: rgba(252, 163, 17, 0.85) !important;
 }
 
 .compareHighlight {
   color: rgba(186, 238, 245, 0.9) !important;
-  background: rgba(115, 216, 224, 0.08);
-  border-left: 1px solid rgba(115, 216, 224, 0.22);
-  border-right: 1px solid rgba(115, 216, 224, 0.22);
+  background: rgba(252, 163, 17, 0.08);
+  border-left: 1px solid rgba(252, 163, 17, 0.22);
+  border-right: 1px solid rgba(252, 163, 17, 0.22);
   font-weight: 600;
 }
 
@@ -587,7 +587,7 @@
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.8);
+  color: rgba(252, 163, 17, 0.8);
   margin-bottom: 0.95rem;
   font-weight: 600;
 }
@@ -657,14 +657,14 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: rgba(115, 216, 224, 0.85);
+  background: rgba(252, 163, 17, 0.85);
 }
 
 .engageTypeLabel {
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.72);
+  color: rgba(252, 163, 17, 0.72);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -752,7 +752,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(115, 216, 224, 0.78);
+  color: rgba(252, 163, 17, 0.78);
   margin-bottom: 1.6rem;
 }
 
@@ -803,8 +803,8 @@
 
 .finalSecondary {
   color: rgba(186, 238, 245, 0.9);
-  border: 1px solid rgba(115, 216, 224, 0.35);
-  background: rgba(115, 216, 224, 0.04);
+  border: 1px solid rgba(252, 163, 17, 0.35);
+  background: rgba(252, 163, 17, 0.04);
 }
 
 .fade {

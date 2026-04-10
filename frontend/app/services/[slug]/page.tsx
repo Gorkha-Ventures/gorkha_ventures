@@ -20,7 +20,7 @@ const services: Record<string, {
     description: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
     longDescription: 'We partner with founders from idea to scale by helping validate business models, sharpen product strategy, and build repeatable go-to-market engines.',
     icon: '🚀',
-    color: '#73d8e0',
+    color: '#fca311',
     highlights: [
       'Business model validation and market testing',
       'Product strategy to prioritize roadmap bets',
@@ -35,7 +35,7 @@ const services: Record<string, {
     description: 'We help micro, small and medium enterprises grow from first customer to Series A.',
     longDescription: 'Gorkha Ventures supports MSMEs with an end-to-end program: pre-seed incubation to validate and scale your idea, seed funding when you\'re ready to grow, and hands-on mentorship from operators who\'ve built companies. We focus on evidence-based execution and long-term partnership so you can go from first customer to Series A with clarity and support.',
     icon: '🏢',
-    color: '#73d8e0',
+    color: '#fca311',
     highlights: [
       'Pre-seed incubation with structured sprints',
       'Seed funding and follow-on capital',

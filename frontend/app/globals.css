@@ -121,8 +121,8 @@ textarea {
 }
 
 .nav-link:hover {
-    color: #73d8e0;
-    background: rgba(115, 216, 224, 0.14);
+    color: #fca311;
+    background: rgba(252, 163, 17, 0.14);
 }
 
 .nav-actions {
@@ -305,16 +305,16 @@ textarea {
     font-size: 15px;
     font-weight: 600;
     color: #0d0d0d;
-    background: #73d8e0;
+    background: #fca311;
     border-radius: 10px;
     text-decoration: none;
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-cta:hover {
-    background: #8ee0e7;
+    background: #ffb84d;
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 4px 20px rgba(252, 163, 17, 0.35);
 }
 
 /* Services dropdown */
@@ -339,8 +339,8 @@ textarea {
 }
 
 .nav-dropdown-trigger:hover {
-    color: #73d8e0;
-    background: rgba(115, 216, 224, 0.14);
+    color: #fca311;
+    background: rgba(252, 163, 17, 0.14);
 }
 
 .nav-dropdown-chevron {
@@ -394,7 +394,7 @@ textarea {
 }
 
 .nav-dropdown-item:hover {
-    color: #73d8e0;
+    color: #fca311;
     background: rgba(255, 255, 255, 0.04);
 }
 
@@ -414,14 +414,14 @@ textarea {
     width: 22px;
     height: 6px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #73d8e0, #ff8b3d);
+    background: linear-gradient(90deg, #fca311, #ff8b3d);
 }
 
 .nav-dropdown-item-icon-analytics .nav-dropdown-item-icon-mark {
     width: 20px;
     height: 20px;
     border: 3px solid #ff8b3d;
-    border-left-color: #73d8e0;
+    border-left-color: #fca311;
     border-radius: 50%;
     background: transparent;
 }
@@ -431,7 +431,7 @@ textarea {
     height: 18px;
     border-radius: 4px;
     background:
-        linear-gradient(#73d8e0, #73d8e0) 0 0 / 9px 7px no-repeat,
+        linear-gradient(#fca311, #fca311) 0 0 / 9px 7px no-repeat,
         linear-gradient(#ff8b3d, #ff8b3d) 12px 0 / 10px 7px no-repeat,
         linear-gradient(#f5f5f5, #f5f5f5) 0 11px / 9px 7px no-repeat,
         linear-gradient(#d4d4d4, #d4d4d4) 12px 11px / 10px 7px no-repeat;
@@ -444,14 +444,14 @@ textarea {
     background:
         linear-gradient(#f5f5f5, #f5f5f5) 0 0 / 22px 4px no-repeat,
         linear-gradient(#ff8b3d, #ff8b3d) 0 8px / 16px 4px no-repeat,
-        linear-gradient(#73d8e0, #73d8e0) 0 16px / 10px 4px no-repeat;
+        linear-gradient(#fca311, #fca311) 0 16px / 10px 4px no-repeat;
 }
 
 .nav-dropdown-item-icon-founders .nav-dropdown-item-icon-mark {
     width: 18px;
     height: 18px;
     background:
-        linear-gradient(135deg, #ff8b3d, #73d8e0);
+        linear-gradient(135deg, #ff8b3d, #fca311);
     clip-path: polygon(50% 0%, 60% 38%, 100% 38%, 68% 58%, 80% 100%, 50% 72%, 20% 100%, 32% 58%, 0% 38%, 40% 38%);
 }
 
@@ -475,7 +475,7 @@ textarea {
 }
 
 .nav-dropdown-item:hover .nav-dropdown-item-title {
-    color: #73d8e0;
+    color: #fca311;
 }
 
 .nav-dropdown-item:hover .nav-dropdown-item-subtitle {
@@ -625,7 +625,7 @@ textarea {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(115, 216, 224, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(252, 163, 17, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
@@ -707,7 +707,7 @@ textarea {
 }
 
 .hero-heading .highlight {
-    color: #73d8e0;
+    color: #fca311;
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 8px;
@@ -723,7 +723,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #73d8e0, rgba(115, 216, 224, 0.3));
+    background: linear-gradient(90deg, #fca311, rgba(252, 163, 17, 0.3));
     border-radius: 2px;
 }
 
@@ -776,15 +776,15 @@ textarea {
 }
 
 .btn-primary {
-    background-color: #73d8e0;
+    background-color: #fca311;
     color: #0d0d0d;
-    box-shadow: 0 4px 14px rgba(115, 216, 224, 0.25);
+    box-shadow: 0 4px 14px rgba(252, 163, 17, 0.25);
 }
 
 .btn-primary:hover {
-    background-color: #8ee0e7;
+    background-color: #ffb84d;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 8px 24px rgba(252, 163, 17, 0.35);
 }
 
 .btn-primary:active {
@@ -896,7 +896,7 @@ textarea {
     font-size: 12px;
     font-weight: 600;
     color: #0d0d0d;
-    background-color: rgba(115, 216, 224, 0.9);
+    background-color: rgba(252, 163, 17, 0.9);
     padding: 6px 12px;
     border-radius: 6px;
     text-transform: uppercase;
@@ -924,13 +924,13 @@ textarea {
 }
 
 .hero-right .testimonial-indicator.active {
-    background-color: #73d8e0;
+    background-color: #fca311;
     width: 24px;
     border-radius: 4px;
 }
 
 .hero-right .testimonial-indicator:hover {
-    background-color: #73d8e0;
+    background-color: #fca311;
     opacity: 0.7;
 }
 
@@ -1076,6 +1076,12 @@ textarea {
     }
 }
 
+@media (min-width: 769px) {
+    .our-network-card-company {
+        font-size: 13px;
+    }
+}
+
 .our-network-card-photo,
 .our-network-card-image img {
     filter: grayscale(100%);
@@ -1125,7 +1131,7 @@ textarea {
 
 .our-network-card-company {
     margin: 0;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.62);
     line-height: 1.35;
@@ -1166,7 +1172,7 @@ textarea {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.16em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 14px;
 }
 
@@ -1200,8 +1206,8 @@ textarea {
     border-radius: 999px;
     font-size: 12px;
     color: #d7eef0;
-    border: 1px solid rgba(115, 216, 224, 0.3);
-    background: rgba(115, 216, 224, 0.12);
+    border: 1px solid rgba(252, 163, 17, 0.3);
+    background: rgba(252, 163, 17, 0.12);
 }
 
 .contact-info {
@@ -1241,7 +1247,7 @@ textarea {
 }
 
 a.contact-info-value:hover {
-    color: #73d8e0;
+    color: #fca311;
 }
 
 .contact-form-wrapper {
@@ -1260,7 +1266,7 @@ a.contact-info-value:hover {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.14em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 8px;
 }
 
@@ -1339,8 +1345,8 @@ a.contact-info-value:hover {
 }
 
 .contact-form-selector-field:focus-within {
-    border-color: rgba(115, 216, 224, 0.4);
-    box-shadow: 0 0 0 3px rgba(115, 216, 224, 0.12);
+    border-color: rgba(252, 163, 17, 0.4);
+    box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.12);
 }
 
 .contact-form-selector-dropdown option {
@@ -1418,8 +1424,8 @@ a.contact-info-value:hover {
 
 .form-input:focus {
     outline: none;
-    border-color: #73d8e0;
-    box-shadow: 0 0 0 3px rgba(115, 216, 224, 0.15);
+    border-color: #fca311;
+    box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.15);
 }
 
 .form-textarea {
@@ -1435,7 +1441,7 @@ a.contact-info-value:hover {
     font-size: 16px;
     font-weight: 600;
     color: #0d0d0d;
-    background: #73d8e0;
+    background: #fca311;
     border: none;
     padding: 16px 28px;
     border-radius: 10px;
@@ -1477,9 +1483,9 @@ a.contact-info-value:hover {
 }
 
 .contact-submit:hover {
-    background: #8ee0e7;
+    background: #ffb84d;
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 4px 20px rgba(252, 163, 17, 0.35);
 }
 
 .contact-submit:disabled {
@@ -1496,7 +1502,7 @@ a.contact-info-value:hover {
 
 .form-success {
     font-size: 15px;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 12px;
 }
 
@@ -1576,7 +1582,7 @@ a.contact-info-value:hover {
 }
 
 .service-page-back:hover {
-    color: #73d8e0;
+    color: #fca311;
 }
 
 .service-page-hero {
@@ -1650,7 +1656,7 @@ a.contact-info-value:hover {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #73d8e0;
+    background: #fca311;
 }
 
 .service-page-cta {
@@ -1662,7 +1668,7 @@ a.contact-info-value:hover {
     font-size: 16px;
     font-weight: 600;
     color: #0d0d0d;
-    background: #73d8e0;
+    background: #fca311;
     padding: 16px 28px;
     border-radius: 10px;
     text-decoration: none;
@@ -1670,9 +1676,9 @@ a.contact-info-value:hover {
 }
 
 .service-page-cta-button:hover {
-    background: #8ee0e7;
+    background: #ffb84d;
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 4px 20px rgba(252, 163, 17, 0.35);
 }
 
 @media (max-width: 768px) {
@@ -1708,7 +1714,7 @@ a.contact-info-value:hover {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 16px;
 }
 
@@ -1772,7 +1778,7 @@ a.contact-info-value:hover {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #73d8e0;
+    background: #fca311;
 }
 
 .about-values strong {
@@ -1838,7 +1844,7 @@ a.contact-info-value:hover {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 16px;
 }
 
@@ -1915,7 +1921,7 @@ a.contact-info-value:hover {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 16px;
 }
 
@@ -2161,7 +2167,7 @@ a.contact-info-value:hover {
 
 .service-card-link:hover {
     gap: 12px;
-    color: #73d8e0;
+    color: #fca311;
 }
 
 .service-card-link-button {
@@ -2275,7 +2281,7 @@ a.contact-info-value:hover {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.14em;
-    color: #73d8e0;
+    color: #fca311;
     margin-bottom: 6px;
 }
 
@@ -2402,7 +2408,7 @@ a.contact-info-value:hover {
 
 .backed-by-mission {
     font-size: 17px;
-    color: #73d8e0;
+    color: #fca311;
     line-height: 1.7;
     margin: 0 0 16px;
     font-weight: 500;
@@ -2423,7 +2429,7 @@ a.contact-info-value:hover {
     font-size: 16px;
     font-weight: 600;
     color: #0d0d0d;
-    background: #73d8e0;
+    background: #fca311;
     border-radius: 10px;
     text-decoration: none;
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
@@ -2431,9 +2437,9 @@ a.contact-info-value:hover {
 }
 
 .backed-by-cta:hover {
-    background: #8ee0e7;
+    background: #ffb84d;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 8px 24px rgba(252, 163, 17, 0.35);
 }
 
 /* Floating icons */
@@ -2844,7 +2850,7 @@ a.contact-info-value:hover {
     justify-content: center;
     font-size: 24px;
     font-weight: 700;
-    color: #73d8e0;
+    color: #fca311;
     flex-shrink: 0;
 }
 
@@ -2862,7 +2868,7 @@ a.contact-info-value:hover {
 
 .testimonial-role {
     font-size: 14px;
-    color: #73d8e0;
+    color: #fca311;
     margin: 0;
     font-weight: 500;
     line-height: 1.2;
@@ -2895,7 +2901,7 @@ a.contact-info-value:hover {
 }
 
 .testimonial-dot.active {
-    background: #73d8e0;
+    background: #fca311;
     width: 32px;
     border-radius: 4px;
 }
@@ -3015,14 +3021,14 @@ a.contact-info-value:hover {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #73d8e0, #5bc4cc);
+    background: linear-gradient(135deg, #fca311, #c77d0a);
     color: #0d0d0d;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(115, 216, 224, 0.35);
+    box-shadow: 0 4px 12px rgba(252, 163, 17, 0.35);
     position: relative;
     z-index: 1;
 }
@@ -3103,7 +3109,7 @@ a.contact-info-value:hover {
 /* Final CTA Section */
 .final-cta-section {
     padding: 64px 0;
-    background-color: #73d8e0;
+    background-color: #fca311;
     position: relative;
     z-index: 2;
 }
@@ -3139,12 +3145,12 @@ a.contact-info-value:hover {
     border-radius: 40px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(115, 216, 224, 0.3);
+    box-shadow: 0 4px 16px rgba(252, 163, 17, 0.3);
 }
 
 .final-cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(115, 216, 224, 0.4);
+    box-shadow: 0 8px 24px rgba(252, 163, 17, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -3251,7 +3257,7 @@ a.contact-info-value:hover {
 }
 
 .footer-link:hover {
-    color: #73d8e0;
+    color: #fca311;
 }
 
 .footer-brand {

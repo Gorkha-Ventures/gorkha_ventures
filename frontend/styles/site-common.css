@@ -31,12 +31,12 @@
   --offering-section-blue: #111111;
   --offering-section-navy: #0d0d0d;
 
-  --offering-sky: #73d8e0;
-  --offering-sky-bright: #69d0da;
-  --offering-sky-soft: rgba(115, 216, 224, 0.8);
-  --offering-cta-fill: #7ed4df;
-  --offering-cta-ink: #0f2531;
-  --offering-stat-num: #66d5e3;
+  --offering-sky: #fca311;
+  --offering-sky-bright: #ffb84d;
+  --offering-sky-soft: rgba(252, 163, 17, 0.8);
+  --offering-cta-fill: #fca311;
+  --offering-cta-ink: #0d0d0d;
+  --offering-stat-num: #ffb84d;
 
   --offering-text-hero: #ecf4fa;
   --offering-heading: #f2f7fb;
@@ -52,12 +52,12 @@
   --offering-muted-ink: #5a7a82;
 
   --offering-border: rgba(255, 255, 255, 0.1);
-  --offering-border-teal: rgba(115, 216, 224, 0.12);
+  --offering-border-teal: rgba(252, 163, 17, 0.12);
   --offering-border-stats: rgba(124, 148, 167, 0.28);
-  --offering-tag-border: rgba(115, 216, 224, 0.28);
-  --offering-tag-bg: rgba(41, 86, 105, 0.38);
-  --offering-ghost-border: rgba(115, 216, 224, 0.45);
-  --offering-ghost-hover: rgba(115, 216, 224, 0.75);
+  --offering-tag-border: rgba(252, 163, 17, 0.28);
+  --offering-tag-bg: rgba(90, 55, 12, 0.42);
+  --offering-ghost-border: rgba(252, 163, 17, 0.45);
+  --offering-ghost-hover: rgba(252, 163, 17, 0.75);
 
   /* Subtle glow like `.hero-section::before` on the home page */
   --offering-hero-grad-linear: linear-gradient(
@@ -67,7 +67,7 @@
   );
   --offering-hero-grad-radial: radial-gradient(
     circle at 50% 50%,
-    rgba(115, 216, 224, 0.08) 0%,
+    rgba(252, 163, 17, 0.08) 0%,
     transparent 70%
   );
 
