@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 // <!-- Saurabh to confirm all TBD values before launch -->
 const GV_CONFIG = {
-  evalFormUrl: "TBD",          // fallback: link to https://forms.gle/trGtP6LXDWCevSGk9
+  evalFormUrl: "https://forms.gle/s58NgaAfYwL4z46aA", // Updated evaluation form link
   evalPriceLabel: "TBD",       // e.g. "Free, 8 slots a month" or "₹2,500"; fallback text: "Pricing announced soon"
   sprintPriceLabel: "TBD",     // fallback: "Shared after your evaluation"
   acceleratorTerms: "TBD",     // what Gorkha Ventures asks in return; fallback: "Shared with selected founders"
@@ -53,7 +53,7 @@ const GV_CONFIG = {
 
 // Resolve config values with fallbacks
 const resolvedConfig = {
-  evalFormUrl: GV_CONFIG.evalFormUrl === "TBD" ? "https://forms.gle/trGtP6LXDWCevSGk9" : GV_CONFIG.evalFormUrl,
+  evalFormUrl: GV_CONFIG.evalFormUrl === "TBD" ? "https://forms.gle/s58NgaAfYwL4z46aA" : GV_CONFIG.evalFormUrl,
   evalPriceLabel: GV_CONFIG.evalPriceLabel === "TBD" ? "Pricing announced soon" : GV_CONFIG.evalPriceLabel,
   sprintPriceLabel: GV_CONFIG.sprintPriceLabel === "TBD" ? "Shared after your evaluation" : GV_CONFIG.sprintPriceLabel,
   acceleratorTerms: GV_CONFIG.acceleratorTerms === "TBD" ? "Shared with selected founders" : GV_CONFIG.acceleratorTerms,
