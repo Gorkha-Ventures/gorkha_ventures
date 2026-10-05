@@ -35,14 +35,7 @@ export default function Header({ isEvaluatePage = false, evalFormUrl }: HeaderPr
 
         {/* Header Navigation and Actions */}
         <div className="header-actions">
-          {isEvaluatePage ? (
-            <nav className="evaluate-nav" aria-label="Page navigation">
-              <a href="#how-it-works" className="header-nav-link">How it works</a>
-              <a href="#scorecard" className="header-nav-link">The scorecard</a>
-              <a href="#ladder" className="header-nav-link">The ladder</a>
-              <a href="#council" className="header-nav-link">The council</a>
-            </nav>
-          ) : (
+          {!isEvaluatePage && (
             <a href="/evaluate" className="btn btn-secondary mono-btn">Pitch Evaluation</a>
           )}
           <a

@@ -885,40 +885,45 @@ body {
   line-height: 1.4;
 }
 
-/* Fact Strip (Carbon Panel) */
+/* Fact Strip matching homepage */
 .eval-fact-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: var(--gv-carbon);
-  color: var(--gv-bone);
-  border-radius: 2px;
-  margin-top: 4rem;
+  gap: 1.5rem;
+  margin-top: 5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--gv-grit-border);
 }
 
 .eval-fact-cell {
-  padding: 2rem 1.75rem;
+  background: var(--gv-bone-card);
+  border: 1px solid var(--gv-grit-border);
+  padding: 1.65rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  border-right: 1px solid rgba(237, 233, 225, 0.12);
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+  border-radius: 2px;
 }
 
-.eval-fact-cell:last-child {
-  border-right: none;
+.eval-fact-cell:hover {
+  border-color: var(--gv-cobalt);
+  transform: translateY(-2px);
 }
 
 .eval-fact-num {
   font-family: var(--font-ibm-plex-mono);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--gv-bone);
+  letter-spacing: -0.03em;
+  color: var(--gv-carbon);
   line-height: 1;
 }
 
 .eval-fact-label {
   font-size: 0.72rem;
-  color: rgba(237, 233, 225, 0.7);
+  color: var(--gv-grit);
+  margin-top: 0.35rem;
 }
 
 /* 6.3 Who this is for */
@@ -1703,7 +1708,7 @@ body {
    RESPONSIVE ADAPTATIONS
    ========================================================================== */
 @media (max-width: 1100px) {
-  .metrics-strip {
+  .metrics-strip, .eval-fact-strip {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1761,22 +1766,9 @@ body {
     align-items: stretch;
   }
 
-  .metrics-strip {
+  .metrics-strip, .eval-fact-strip {
     grid-template-columns: 1fr;
     margin-top: 3rem;
-  }
-
-  .eval-fact-strip {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 3rem;
-  }
-
-  .eval-fact-cell:nth-child(2) {
-    border-right: none;
-  }
-
-  .eval-fact-cell:nth-child(1), .eval-fact-cell:nth-child(2) {
-    border-bottom: 1px solid rgba(237, 233, 225, 0.12);
   }
 
   .eval-two-col-grid {
