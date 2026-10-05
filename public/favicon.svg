@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Brand Cobalt Background Squircle -->
+  <rect width="1024" height="1024" rx="228" fill="#1B3FCC"/>
+  
+  <!-- Master Gorkha Ventures Chevron Fold Mark (100% Centered) -->
+  <path d="M 716 295 L 325 295 A 50 50 0 0 0 275 345 L 275 675 A 50 50 0 0 0 325 725 L 512 562 L 798 726" 
+        fill="none" 
+        stroke="#EDE9E1" 
+        stroke-width="98" 
+        stroke-linecap="butt" 
+        stroke-linejoin="round"/>
+</svg>
